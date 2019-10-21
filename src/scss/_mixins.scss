@@ -1,0 +1,7 @@
+@mixin shadow($y: 0, $x: 0, $blur: 15px, $spread: 0) {
+  box-shadow: $y $x $blur $spread rgba(0, 0, 0, 0.1);
+}
+
+@mixin transition() {
+  transition: all 0.7s ease-in-out;
+}
