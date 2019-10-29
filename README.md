@@ -1,4 +1,4 @@
-#CountryInfo1
+#CountryInfo
 Proiect CodersLab
 
 1.Clone
