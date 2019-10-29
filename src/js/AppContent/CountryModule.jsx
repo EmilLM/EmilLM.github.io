@@ -8,11 +8,11 @@ export default class CountryModule extends React.Component {
 
     handleClick = () => {
         this.setState({
-            className: 'ldt-power-off'
+            className: 'ldt-zoom-out'
         });
     };
     handleAnimation = () => {
-        if (this.state.className === 'ldt-power-off') {
+        if (this.state.className === 'ldt-zoom-out') {
             this.setState({
                 isModuleShowing: false
             })

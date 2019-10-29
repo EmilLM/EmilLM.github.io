@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded",function () {
 class App extends React.Component {
     state = {
       isModuleVisible: false,
-      className: 'ldt-power-on',
+      className: 'ldt-zoom-in',
       isSearchClicked : false,
       countryModuleClassName: 'ldt-zoom-in',
       dataByIP: false,
@@ -28,26 +28,29 @@ class App extends React.Component {
       countryCode: false,
       ipCountry : false,
       errorStatus: false,
-      modal: false
+      modal: false,
+      modalClass: 'ldt-zoom-in'
     };
+    //Add country click--> display search module
     displaySearchModule = () => {
       this.setState( {
           isModuleVisible: true,
-          className: 'ldt-power-on'
+          className: 'ldt-zoom-in'
       })
     };
-    handleClick = () => {
+    closeSearch = () => {
         this.setState({
-            className: 'ldt-power-off',
+            className: 'ldt-zoom-out',
         });
     };
     handleAnimation = () => {
-        if (this.state.className === 'ldt-power-off') {
+        if (this.state.className === 'ldt-zoom-out') {
             this.setState({
                 isModuleVisible: false
             })
         }
     };
+    //Events to display country module by search + close animations
     displayCountryModule = () => {
         this.setState({
           isSearchClicked: true,
@@ -67,19 +70,37 @@ class App extends React.Component {
             })
         }
     };
+    // removes invalid input warning after every search
     handleErrorCheck = () => {
         if (this.state.errorStatus) {
             this.setState({
-               errorStatus: false
+               errorStatus: !this.state.errorStatus
             })
         }
     };
+    // displays About modal
     modalToggle= () => {
         this.setState({
-            modal: !this.state.modal
+            modal: !this.state.modal,
+            modalClass: 'ldt-zoom-in'
+
         })
     };
+    modalClose = () => {
+        this.setState({
+            modalClass: 'ldt-zoom-out'
+        })
+    };
+    modalCloseAnimation = () => {
+        if (this.state.modalClass === 'ldt-zoom-out') {
+            this.setState({
+                modal: !this.state.modal
+            })
+        }
+    };
 
+
+    //API request by search
     sendCountryName = value => {
         fetch(`https://restcountries.eu/rest/v2/name/` + value +`?fullText=true`).then(resp => {
             return resp.json();
@@ -163,8 +184,9 @@ class App extends React.Component {
                     <AddCountry  onToggle={this.displaySearchModule} moduleState={this.state.isModuleVisible}  />
                 </Header>
                 <Container>
+                    {/*Conditional rendering for Search module*/}
                     {this.state.isModuleVisible && <SearchModule moduleState={this.state.isModuleVisible} onClass={this.state.className} onAnimation={this.handleAnimation}
-                                                                 onX={this.handleClick} onSend={this.sendCountryName} onSearch={this.displayCountryModule}
+                                                                 onX={this.closeSearch} onSend={this.sendCountryName} onSearch={this.displayCountryModule}
                                                                  countrySearch={this.state.countrySearch} onError={this.state.errorStatus} onErrorChange={this.handleErrorCheck}/>}
                     <CountryModule dataIP={this.state.dataByIP}>
                         <CountryDetails  dataIP={this.state.dataByIP} dataCode={this.state.dataByCode}  ipCountry={this.state.ipCountry} />
@@ -186,7 +208,8 @@ class App extends React.Component {
                             </>
                         }
                     </>
-                    {this.state.modal && <Modal onClick={this.modalToggle} status={this.state.modal} onModalToggle={this.modalToggle}/>}
+                    {/*Conditional rendering for About modal*/}
+                    {this.state.modal && <Modal onModalX={this.modalClose} status={this.state.modal} onClass={this.state.modalClass} onAnimation={this.modalCloseAnimation} />}
                 </Container>
             </>
         )

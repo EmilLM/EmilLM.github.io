@@ -22,7 +22,7 @@ export default class CountryDetailsFromSearch extends React.Component {
                             </div>
                         </div>
                         <ul className="main_indicators ldt-fall-in">
-                            <li className='btn btn-primary tooltip'>
+                            <li className='tooltip'>
                                 <img src={"../../assets/images/population.png"} alt={'population icon'} />
                                 <span className="age_value"> <span>Median age:</span> 42</span>
                                 {/*{this.props.dataCode?this.props.dataCode.indicator_value[this.props.countryCode][47906][2015]:'' }*/}
@@ -33,7 +33,7 @@ export default class CountryDetailsFromSearch extends React.Component {
                                     <i> </i>
                                 </div>
                             </li>
-                            <li className='btn btn-primary tooltip'>
+                            <li className='tooltip'>
                                 <img src={"../../assets/images/income.png"} alt={'income icon'} />
                                 <span className="income_value"> <span>GNI: </span> 23.000$</span>
                                 <div className="right">
@@ -44,7 +44,7 @@ export default class CountryDetailsFromSearch extends React.Component {
                                     <i> </i>
                                 </div>
                             </li>
-                            <li className='btn btn-primary tooltip'>
+                            <li className='tooltip'>
                                 <img src={"../../assets/images/hdi.png"} alt={'hdi icon'} />
                                 <span className="pop_value"> <span>HDI index:</span> 52</span>
                                 <div className="right">

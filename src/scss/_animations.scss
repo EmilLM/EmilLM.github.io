@@ -1,14 +1,15 @@
-.country_details {
-  .ldt-blur-in {
-    animation-delay: 1.5s;
+#countryIP{
+    .ldt-blur-in {
+      animation-delay: 1.5s;
+    }
+    .ldt-slide-bottom-in {
+      animation-delay: 2s;
+    }
   }
-  .ldt-slide-bottom-in {
-    animation-delay: 2s;
-  }
-}
 #mainIndicators {
   animation-delay: 2.5s;
 }
+
 
 .ip_module {
   .ldt-slide-left-in {

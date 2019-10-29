@@ -9,7 +9,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
                     <img style={{margin: 'vh auto', width:'8vw', height: 'auto'}} src={'../../assets/images/animIcons/earth_loading.svg'} alt={'loading icon'}/>
                     :
                     <ul className="other_indicators">
-                        <li className={'ldt-slide-left-in btn btn-primary tooltip'}>
+                        <li className={'ldt-slide-left-in  tooltip'}>
                             <div className="indicator_name">UNEMPLOYED</div>
                             <div className="indicator_icon"><img src={"../../assets/images/animIcons/work.svg"} alt={'work icon'} /></div>
                             <div className="indicator_value">5.2%</div>
@@ -21,7 +21,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
                                 <i> </i>
                             </div>
                         </li>
-                        <li className={'ldt-slide-bottom-in btn btn-primary tooltip'}>
+                        <li className={'ldt-slide-bottom-in  tooltip'}>
                             <div className="indicator_name">GDP</div>
                             <div className="indicator_icon"><img src={"../../assets/images/animIcons/GDP.svg"} alt={'GDP icon'} /></div>
                             <div className="indicator_value">260mld $</div>
@@ -34,7 +34,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
                             </div>
                         </li>
 
-                        <li className={'ldt-slide-top-in btn btn-primary tooltip'}>
+                        <li className={'ldt-slide-top-in tooltip'}>
                             <div className="indicator_name">NET USERS</div>
                             <div className="indicator_icon"><img src={"../../assets/images/animIcons/wifi.svg"} alt={'wifi icon'} /></div>
                             <div className="indicator_value">60%</div>
@@ -45,7 +45,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
                                 <i> </i>
                             </div>
                         </li>
-                        <li className={'ldt-slide-bottom-in btn btn-primary tooltip'}>
+                        <li className={'ldt-slide-bottom-in  tooltip'}>
                             {/*//Gini din restcountries*/}
                             <div className="indicator_name">GINI</div>
                             <div className="indicator_icon"><img src={"../../assets/images/animIcons/GINI.svg"} alt={'GINI icon'} /></div>
@@ -58,7 +58,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
                                 <i> </i>
                             </div>
                         </li>
-                        <li className={'ldt-slide-right-in btn btn-primary tooltip'}>
+                        <li className={'ldt-slide-right-in tooltip'}>
                             <div className="indicator_name">EMISSIONS</div>
                             <div className="indicator_icon"><img src={"../../assets/images/animIcons/carbon.svg"} alt={'C02 icon'} /></div>
                             <div className="indicator_value">2204t</div>

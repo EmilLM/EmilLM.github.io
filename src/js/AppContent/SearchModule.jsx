@@ -11,18 +11,12 @@ export default class SearchModule extends React.Component {
         }
     };
     handleAnimation = () => {
-        if(typeof this.props.onAnimation ==='function') {
+        if (typeof this.props.onAnimation ==='function') {
             this.props.onAnimation();
         }
     };
-    //!!!!!!!!!!!! add a error condition!
     handleRunning = () => {
-        console.log(Boolean(this.state.countryName));
-        if (Boolean(this.state.countryName) === false && this.props.countrySearch === false) {
-            this.setState({
-                runningButton: '',
-            })
-        } else if (Boolean(this.state.countryName) === true) {
+       if (Boolean(this.state.countryName) === true) {
             this.setState( {
                 runningButton: 'running'
             }, ()=>{

@@ -7,7 +7,7 @@ body {
   font-family: Ubuntu, sans-serif;
 }
 
-#header {
+.nav_header {
   width: 100vw;
   height: 15vh;
   background: $gradient1;
@@ -104,6 +104,7 @@ body {
   }
   &:active {
     outline: none;
+    box-shadow: $innerShadow;
   }
 }
 
@@ -147,9 +148,11 @@ body {
     height: auto;
     box-shadow: 0 0 58px 1px rgba(255,255,255,1);
     border-radius: 2vh;
-    @include transition();
+
     &:hover{
       box-shadow: $boxShadow;
+      width: 13.5vw;
+      transition: 0.5s;
 
     }
 

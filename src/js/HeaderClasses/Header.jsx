@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 export default class Header extends Component {
     render () {
         return (
-            <header id='header'>
+            <header className='nav_header'>
                 <div className={'container'}>
                     {this.props.children}
                 </div>

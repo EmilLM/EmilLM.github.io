@@ -10,7 +10,7 @@ export default class CountryDetails extends React.Component {
                 <img style={{margin: '8vh auto', width:'8vw', height: 'auto'}} src={'../../assets/images/animIcons/earth_loading.svg'} alt={'loading icon'}/>
                     :
                 <>
-                <div className="country_details ">
+                <div id='countryIP' className="country_details ">
                     <a href={"https://en.wikipedia.org/wiki/" + this.props.ipCountry} target="_blank">
                     <img className="flag ldt-blur-in" src={this.props.dataIP[0].flag} alt={'flag'} />
                     </a>

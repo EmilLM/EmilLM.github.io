@@ -23,8 +23,11 @@
     box-shadow: $boxShadow;
     outline: none;
     border: 2px solid darkblue;
+    transition: background 2s;
   }
   &:active {
     outline: none;
+    color: darkblue;
+    box-shadow: $innerShadow, $boxShadow;
   }
 }

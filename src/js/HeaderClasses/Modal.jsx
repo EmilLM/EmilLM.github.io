@@ -1,13 +1,23 @@
 import React from 'react';
 
 export default class Modal extends React.Component {
+    handleClick = () => {
+        if (typeof this.props.onModalX ==='function') {
+            this.props.onModalX();
+        }
+    };
+    handleAnimation = () => {
+        if (typeof this.props.onAnimation === 'function') {
+            this.props.onAnimation();
+        }
+    };
     render () {
         return (
-            <div className='modal ldt-zoom-in' data-status={this.props.status}>
+            <div className={'modal ' + this.props.onClass} onAnimationEnd={this.handleAnimation}>
                 <header className='modal_header ldt-slide-top-in'>
                     <h3 className='ldt-slide-bottom-in'>Welcome to C<sub><img src={'/assets/images/animIcons/earth_loading.svg'}/></sub>untryInf
                                     <sub><img src={'/assets/images/animIcons/earth_loading.svg'}/></sub>!</h3>
-                    <button className='close_button' onClick={this.props.onModalToggle}> X </button>
+                    <button className='close_button' onClick={this.handleClick}> X </button>
                 </header>
                 <main className='ldt-fade-in'>
                     <article className='ldt-slide-left-in'>

@@ -16,7 +16,6 @@ export default class CountryModuleFromSearch extends React.Component {
     render() {
         return (
             <>
-                {/*if in if pentru o singura loading*/}
                 {this.props.countryModuleState === true
                     ?
                     <article className={`country_module ` + this.props.countryModuleClassName} onAnimationEnd={this.handleAnimation} >
