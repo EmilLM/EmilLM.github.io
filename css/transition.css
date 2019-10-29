@@ -37,6 +37,7 @@
   transform: scale(0.05, 0.05);
   -webkit-animation: ldt-power-on 1s forwards;
   animation: ldt-power-on 1s forwards;
+
 }
 @keyframes ldt-power-off {
   0%, 20%, 100% {
@@ -589,6 +590,7 @@
 .ldt-jump-in {
   -webkit-animation: ldt-jump-in 1s forwards;
   animation: ldt-jump-in 1s forwards;
+
 }
 @keyframes ldt-jump-out {
   0%, 45%, 72% {
@@ -1041,6 +1043,7 @@
   transform: scale(0);
   -webkit-animation: ldt-zoom-in 1s forwards;
   animation: ldt-zoom-in 1s forwards;
+
 }
 @keyframes ldt-zoom-out {
   0%, 20%, 100% {
@@ -2074,6 +2077,7 @@
   opacity: 0;
   -webkit-animation: ldt-fall-in 1s forwards;
   animation: ldt-fall-in 1s forwards;
+  /*animation-delay: 2.5s;*/
 }
 @keyframes ldt-throw-in {
   0%, 50% {
@@ -2142,6 +2146,7 @@
 .ldt-throw-in {
   -webkit-animation: ldt-throw-in 1s linear forwards;
   animation: ldt-throw-in 1s linear forwards;
+  animation-delay: 2s;
 }
 @keyframes ldt-vortex-in {
   0% {
@@ -2991,6 +2996,7 @@
 .ldt-throw-px-in {
   -webkit-animation: ldt-throw-px-in 1s linear forwards;
   animation: ldt-throw-px-in 1s linear forwards;
+
 }
 @keyframes ldt-fade-in {
   0% {

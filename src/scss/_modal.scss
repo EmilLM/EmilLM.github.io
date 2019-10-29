@@ -1,0 +1,106 @@
+.app_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: $gradient1;
+    top: 50px;
+    border: 3px solid darkblue;
+    box-shadow: $boxShadow;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    header {
+      border-radius: 10px;
+      text-align: center;
+      background: darkblue;
+      border: 3px solid cornflowerblue;
+      img {
+        width: 2vw;
+        height: auto;
+      }
+    }
+    main {
+      background-image: url('/assets/images/modal_bg.gif');
+      background-position: center;
+      //background-size: cover;
+      //overflow: hidden;
+      background-repeat: no-repeat;
+      background-color: #066ACA;
+      border: 3px solid white;
+      border-radius: 10px;
+      height: 50vh;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      box-shadow: $innerShadow;
+      article {
+        h5 {
+          padding-left: 5vw;
+          color: darkblue;
+          margin: 15px 0 0 0;
+        }
+        p {
+          font-size: 1.3rem;
+          padding: 0 1vw 0 1vw;
+          margin: 2vh 0 0 0;
+          text-indent: 2vw;
+        }
+      }
+    }
+  }
+}
+.doc_lists {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  ul {
+    color: darkblue;
+    font-size: 2.5vh;
+    list-style-type: square;
+    line-height: 4.5vh;
+    li {
+      color: $MainColor;
+      font-size: 1.8vh;
+      line-height: 2.5vh;
+    }
+  }
+}
+footer {
+  background: darkblue;
+  border: 3px solid cornflowerblue;
+  border-radius: 10px;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  #gh {
+    width: 6vw;
+    //border: 2px solid white;
+    //border-radius: 10px;
+    content: url('/assets/images/GitHub_logo.png');
+
+    &:hover {
+      content: url('/assets/images/GitHub_hover.png');
+    }
+  }
+
+  #lin {
+    width: 7.5vw;
+    //border: 2px solid white;
+    //border-radius: 10px;
+    content: url('/assets/images/linkedin_logo.png');
+    padding: 6px;
+    &:hover {
+      content: url('/assets/images/linkedin_hover.png');
+    }
+  }
+}

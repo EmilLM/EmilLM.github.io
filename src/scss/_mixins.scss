@@ -5,3 +5,26 @@
 @mixin transition() {
   transition: all 0.7s ease-in-out;
 }
+
+@mixin buttonStyle() {
+  font-size: 2.5vh;
+  padding: 0.5vh;
+  border-radius: 1vh;
+  background: cornflowerblue;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  outline: none;
+  @include transition();
+  box-shadow: $boxShadowBefore;
+  &:hover {
+    background: white;
+    color: cornflowerblue;
+    box-shadow: $boxShadow;
+    outline: none;
+    border: 2px solid darkblue;
+  }
+  &:active {
+    outline: none;
+  }
+}

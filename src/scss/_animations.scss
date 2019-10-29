@@ -1,0 +1,55 @@
+.country_details {
+  .ldt-blur-in {
+    animation-delay: 1.5s;
+  }
+  .ldt-slide-bottom-in {
+    animation-delay: 2s;
+  }
+}
+#mainIndicators {
+  animation-delay: 2.5s;
+}
+
+.ip_module {
+  .ldt-slide-left-in {
+    animation-delay: 3s;
+  }
+  .ldt-slide-right-in {
+    animation-delay: 3.5s;
+  }
+  .ldt-slide-bottom-in {
+    animation-delay: 3.5s;
+  }
+  .ldt-slide-top-in {
+    animation-delay: 3.5s;
+  }
+}
+
+.modal {
+  .ldt-slide-top-in {
+    animation-delay: 0.5s;
+  }
+  .modal_header {
+    .ldt-slide-bottom-in {
+      animation-delay: 1.5s;
+    }
+  }
+  .ldt-fade-in {
+    animation-delay: 2s;
+  }
+  .ldt-slide-left-in {
+    animation-delay: 2.5s;
+  }
+  .ldt-slide-right-in {
+    animation-delay: 2.5s;
+  }
+  footer.ldt-slide-bottom-in {
+    animation-delay: 3s;
+    .ldt-slide-left-in {
+      animation-delay: 4s;
+    }
+    .ldt-slide-right-in {
+      animation-delay: 4s;
+    }
+  }
+}

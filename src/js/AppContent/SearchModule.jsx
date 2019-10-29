@@ -2,34 +2,39 @@ import React from 'react';
 
 export default class SearchModule extends React.Component {
     state = {
-        isModuleVisible: true,
         countryName: '',
-        className: 'ldt-power-on',
         runningButton: ''
     };
     handleClick = () => {
-        this.setState({
-            className: 'ldt-power-off'
-        });
+        if(typeof this.props.onX ==='function') {
+            this.props.onX();
+        }
     };
     handleAnimation = () => {
-        if (this.state.className === 'ldt-power-off') {
+        if(typeof this.props.onAnimation ==='function') {
+            this.props.onAnimation();
+        }
+    };
+    //!!!!!!!!!!!! add a error condition!
+    handleRunning = () => {
+        console.log(Boolean(this.state.countryName));
+        if (Boolean(this.state.countryName) === false && this.props.countrySearch === false) {
             this.setState({
-                isModuleVisible: false
+                runningButton: '',
+            })
+        } else if (Boolean(this.state.countryName) === true) {
+            this.setState( {
+                runningButton: 'running'
+            }, ()=>{
+                setTimeout( () =>{
+                    this.setState({
+                        runningButton: ''
+                    })
+                }, 1000)
             })
         }
     };
-    handleRunning = () => {
-        this.setState({
-            runningButton: 'running'
-        }, ()=>{
-            setTimeout(()=>{
-                this.setState({
-                    runningButton: ''
-                })
-            }, 1500)
-        });
-    };
+
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
@@ -38,34 +43,46 @@ export default class SearchModule extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         let {countryName} = this.state;
-        if(typeof this.props.onSend ==='function') {
+        if (typeof this.props.onSend ==='function') {
             this.props.onSend(countryName);
         }
+        if (typeof this.props.onSearch === 'function') {
+            this.props.onSearch();
+        }
+        if (typeof this.props.onErrorChange === 'function') {
+            this.props.onErrorChange();
+        }
+        this.setState({
+           countryName: ''
+        });
+
     };
 
     render() {
         return (
             <>
-                {this.state.isModuleVisible === true
+                {this.props.moduleState === true
                     ?
-                    <article onAnimationEnd={this.handleAnimation} className={'search_module ' + this.state.className}>
-                        {/*<h2 >Enter country name</h2>*/}
+                    <article onAnimationEnd={this.handleAnimation} className={'search_module ' + this.props.onClass}>
                         <button className="close_button" onClick={this.handleClick}>X</button>
-                        <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
 
-                            <label htmlFor="inp" className="inp">
+                        <form  autoComplete="off" onSubmit={this.handleSubmit}>
+
+                            <label htmlFor="inp" className="inp" >
                                 <input type="text" id='inp' name="countryName" value={this.state.countryName}
-                                       onChange={this.handleChange} placeholder='&nbsp;' required/>
+                                       onChange={this.handleChange} placeholder='&nbsp;' required />
                                 <span className="label">Country name</span>
                                 <span className="border"> </span>
                             </label>
 
-                            <button type="submit" className={"search_button ld-ext-right "+ this.state.runningButton} onClick={this.handleRunning}>Search
+                            <button type="submit" className={"btn search_button ld-ext-right "+ this.state.runningButton} onClick={this.handleRunning}>Search
                                 <div className={"ld ld-ring ld-spin"}> </div>
                             </button>
-                            <div className="search_error"></div>
-                            {/*    includes??*/}
+
                         </form>
+                        <div>
+                            {this.props.onError && <div className="search_error">Invalid country name!</div>}
+                        </div>
                     </article>
                     :
                     null}

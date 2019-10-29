@@ -3,27 +3,25 @@ import React from 'react';
 export default class CountryDetails extends React.Component {
 
     render() {
-        console.log(this.props.dataCode);
-        console.log(this.props.dataIP);
         return (
             <>
                 {this.props.dataIP === false
                     ?
-                <img style={{margin: '8vh auto', width:'9vh', height: 'auto'}} src={'../../assets/images/loading.gif'} alt={'loading icon'}/>
+                <img style={{margin: '8vh auto', width:'8vw', height: 'auto'}} src={'../../assets/images/animIcons/earth_loading.svg'} alt={'loading icon'}/>
                     :
                 <>
                 <div className="country_details ">
-                    <a href={"https://en.wikipedia.org/wiki/" + this.props.dataName} target="_blank">
-                    <img className="flag ldt-power-on" src={this.props.dataSearch} />
+                    <a href={"https://en.wikipedia.org/wiki/" + this.props.ipCountry} target="_blank">
+                    <img className="flag ldt-blur-in" src={this.props.dataIP[0].flag} alt={'flag'} />
                     </a>
-                    <div className="currency_country ldt-jump-in">
-                        <div className="countryName">{this.props.dataName}</div>
-                        <div className="currency">{this.props.dataCurrency}</div>
-                        <div className="language">{this.props.dataLang} </div>
+                    <div className="currency_country ldt-slide-bottom-in">
+                        <div className="countryName">{this.props.dataIP[0].name}</div>
+                        <div className="currency">{this.props.dataIP[0].currencies[0].code}</div>
+                        <div className="language">{this.props.dataIP[0].languages[0].name} </div>
                     </div>
                 </div>
-                <ul className="main_indicators ldt-fall-in">
-                    <li className='btn btn-primary tooltip'>
+                <ul id='mainIndicators' className="main_indicators ldt-fall-in">
+                    <li className='tooltip'>
                         <img src={"../../assets/images/population.png"} alt={'population icon'} />
                         <span className="age_value"> <span>Median age:</span> 42</span>
                         {/*{this.props.dataCode?this.props.dataCode.indicator_value[this.props.countryCode][47906][2015]:'' }*/}
@@ -34,7 +32,7 @@ export default class CountryDetails extends React.Component {
                             <i> </i>
                         </div>
                     </li>
-                    <li className='btn btn-primary tooltip'>
+                    <li className='tooltip'>
                         <img src={"../../assets/images/income.png"} alt={'income icon'} />
                         <span className="income_value"> <span>GNI: </span> 23.000$</span>
                         <div className="right">
@@ -45,7 +43,7 @@ export default class CountryDetails extends React.Component {
                             <i> </i>
                         </div>
                     </li>
-                    <li className='btn btn-primary tooltip'>
+                    <li className='tooltip'>
                         <img src={"../../assets/images/hdi.png"} alt={'hdi icon'} />
                         <span className="pop_value"> <span>HDI index:</span> 52</span>
                         <div className="right">

@@ -7,9 +7,10 @@ export default class Container extends React.Component {
                     backgroundImage: "url(" + "../../assets/images/map.png" + ")",
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
-                    height: '100vh'
+                    height: '120vh',
+                    width: '100vw'
             }}>
-                <section className="app_Container">
+                <section className="app_container">
                     {this.props.children}
                 </section>
             </main>
