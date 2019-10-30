@@ -1,0 +1,63 @@
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  p {
+    margin: 10px 0 10px 0;
+    border: 1px solid black;
+  }
+  .btn {
+    position: absolute;
+    bottom: 25px;
+    right: 100px;
+  }
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+.input-container {
+  display: flex;
+  margin: 10px 0 0 0;
+  height: 3.5vh;
+  //border: 3px solid white;
+  input {
+    width: 20vw;
+    outline: none;
+    font-size: 2vh;
+    padding-left: 1.5vw;
+    border: 3px solid cornflowerblue;
+    transition: all 0.5s ease-in-out;
+    &:focus {
+      border: 3px solid darkblue;
+    }
+  }
+  .icon {
+    padding: 3px;
+    background: darkblue;
+    color: white;
+    width: 2.5vw;
+    text-align: center;
+  }
+}
+
+textarea {
+  resize: none;
+  width: 23vw;
+  font-size: 2vh;
+  border: 3px solid cornflowerblue;
+  transition: height 0.5s ease-in-out;
+  padding-left: 0.5vw;
+  height: 5vh;
+  &:focus {
+    border: 3px solid darkblue;
+    height: 10vh;
+
+  }
+}

@@ -58,13 +58,14 @@
       &:hover {
         background: rgba(34, 50, 84, 0.03);
       }
-      &:not(:placeholder-shown) +span {
+      &:not(:placeholder-shown) + span {
         color: darkblue;
         transform: translateY(-26px) scale(.75);
       }
       &:focus {
         background: none;
         outline: none;
+
 
       }
     }

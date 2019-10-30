@@ -28,7 +28,7 @@ export default class Modal extends React.Component {
                         </p>
                         <p>
                             It combines both my interest in programming; in nice, clean and responsive design as well
-                            as my passion for international relations.
+                            as my passion for international relations. This project is about practicing my current skills.
                         </p>
 
                     </article>
@@ -48,7 +48,7 @@ export default class Modal extends React.Component {
                             <ul> Assets:
                                 <li><a>Loading.io</a></li>
                                 <li><a>Pixabay</a></li>
-                                <li><a>And more</a></li>
+                                <li><a>Font Awesome</a></li>
                             </ul>
                         </div>
                     </article>
