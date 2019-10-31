@@ -1,63 +1,289 @@
-.contactForm {
+header {
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
-  align-items: flex-start;
+}
+.main_form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   width: 90%;
   height: 100%;
-  margin: 0 auto;
+  margin: 10px auto;
   position: relative;
-  p {
-    margin: 10px 0 10px 0;
-    border: 1px solid black;
-  }
+  flex-wrap: wrap;
+
   .btn {
     position: absolute;
     bottom: 25px;
-    right: 100px;
+    right: 17.5vw;
   }
+}
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 35vh;
+  width: 55%;
 }
 .inputs {
   display: flex;
   flex-direction: column;
   align-content: space-between;
+  height: 15vh;
 }
 .input-container {
   display: flex;
   margin: 10px 0 0 0;
-  height: 3.5vh;
-  //border: 3px solid white;
+  height: 4vh;
+  width: 23vw;
+  border: 3px solid cornflowerblue;
+  border-radius: 5px;
   input {
     width: 20vw;
     outline: none;
     font-size: 2vh;
     padding-left: 1.5vw;
-    border: 3px solid cornflowerblue;
+
     transition: all 0.5s ease-in-out;
+    color: darkblue;
+    box-shadow: $smallerInnerShadow;
     &:focus {
       border: 3px solid darkblue;
     }
+  }
+  input::placeholder {
+    color: #066ACA;
+    opacity: 0.5;
   }
   .icon {
     padding: 3px;
     background: darkblue;
     color: white;
-    width: 2.5vw;
+    width: 3vw;
     text-align: center;
   }
 }
 
+.area_box {
+  height: 4.3vh;
+}
 textarea {
   resize: none;
-  width: 23vw;
+  width: 23.3vw;
   font-size: 2vh;
   border: 3px solid cornflowerblue;
-  transition: height 0.5s ease-in-out;
-  padding-left: 0.5vw;
-  height: 5vh;
+  transition: all 0.5s ease-in-out;
+  padding: 0.35vw;
+  height: 4.3vh;
+  color: darkblue;
+  box-shadow: $smallerInnerShadow;
+  border-radius: 5px;
+
   &:focus {
     border: 3px solid darkblue;
+    font-size: 2vh;
     height: 10vh;
-
+  }
+  &::placeholder{
+    opacity: 0.5;
+    color: #066ACA;
   }
 }
+
+//Radio+checks
+.survey_form {
+  width: 40%;
+  .checks {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    p {
+      margin: 10px 0 16px 0;
+      font-size: 2.8vh;
+    }
+  }
+}
+.survey_checkbox {
+  .tooltip {
+    margin-top: 0;
+  }
+}
+.inputGroup {
+  background-color: white;
+  margin: 13px 0;
+  position: relative;
+  width: 100%;
+  border: 3px solid cornflowerblue;
+  border-radius: 5px;
+  box-shadow: $smallerInnerShadow;
+  .right {
+    width: 16.5vw;
+    p {
+      font-size: 1.5vh;
+      text-align: left;
+    }
+    div.survey_radio > p {
+      margin-bottom: 20px;
+    }
+  }
+  input {
+    width: 100%;
+    height: 3vh;
+    padding-left: 10px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+
+  //  TO hide checks/radio default buttons
+  }
+  label {
+    font-size: 2vh;
+    text-indent: 1.5vw;
+    padding: 10px 0;
+    width: 100%;
+    display: block;
+    text-align: justify;
+    color: darkblue;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s ease-in;
+    overflow: hidden;
+    //this before adds the checkbox
+    &:before {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      content: '';
+      background-color: darkblue;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale3d(1, 1, 1);
+      transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+      opacity: 0;
+      z-index: -1;
+    }
+    //this after add bg color
+    &:after {
+      width: 32px;
+      height: 32px;
+      content: '';
+      border: 2px solid cornflowerblue;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+      background-repeat: no-repeat;
+      background-position: 2px 3px;
+      border-radius: 50%;
+      z-index: 2;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: all 0.5s ease-in;
+    }
+  }
+
+  input:checked ~ label {
+    color: #fff;
+    //this before makes visible the label;
+    &:before {
+      transform: translate(-50%, -50%) scale3d(56, 56, 1);
+      opacity: 1;
+    }
+    //this after adds the checkmark
+    &:after {
+      background-color: cornflowerblue;
+      border: 2px solid white;
+    }
+  }
+
+}
+
+//Select styles
+.select_form{
+  width: 23vw;
+  padding: 0;
+  display: flex;
+  .subject_box {
+    position: relative;
+    width: 11.5vw;
+    border-right: 2px solid white;
+  }
+  .countries_box{
+    position: relative;
+    width: 11.5vw;
+    border-left: 2px solid white;
+  }
+  select {
+    width: 11.5vw;
+    height: 3.5vh;
+    background-color: darkblue;
+    font-size: 2vh;
+    color: white;
+    border: none;
+    -webkit-appearance: button;
+    outline: none;
+    text-indent: 10px;
+    &:focus {
+      background: cornflowerblue;
+    }
+    option {
+      font-size: 2vh;
+      background: #066ACA;
+      color: darkblue;
+    }
+    option[disabled] {
+      background-color: white;
+    }
+  }
+  .subject_box::before {
+    content: "\f13a";
+    font-family: FontAwesome, serif;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: cornflowerblue;
+    pointer-events: none;
+    }
+  .subject_box:hover::before {
+    background: darkblue;
+  }
+  .subject_box:active::before {
+    background: cornflowerblue;
+  }
+  .countries_box::before {
+    content: "\f13a";
+    font-family: FontAwesome, serif;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: cornflowerblue;
+    pointer-events: none;
+  }
+  .countries_box:hover::before {
+    background: darkblue;
+  }
+  .countries_box:active::before {
+    background: cornflowerblue;
+  }
+}
+
