@@ -1,3 +1,4 @@
+
 header {
   display: flex;
   justify-content: space-evenly;
@@ -65,17 +66,15 @@ header {
   }
   .check_icon {
     position: absolute;
-    bottom: 7px;
-    left: 3.5vw;
+    bottom: 5px;
+    left: 3.7vw;
     color: cornflowerblue;
-    width: 0.1vw;
-    height: auto;
     font-size: 2.5vh;
   }
   .pass_icon {
     position: absolute;
-    bottom: 7px;
-    right: 45px;
+    bottom: 5px;
+    right: 1.7vw;
     color: cornflowerblue;
     width: 0.1vw;
     height: auto;
@@ -90,7 +89,7 @@ header {
 }
 textarea {
   resize: none;
-  width: 23.3vw;
+  width: 23.5vw;
   font-size: 2vh;
   border: 3px solid cornflowerblue;
   transition: all 0.5s ease-in-out;
@@ -117,11 +116,14 @@ textarea {
   .checks {
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
+    margin-top: 30px;
     p {
-      margin: 10px 0 16px 0;
-      font-size: 2.8vh;
+     margin: 0;
+      font-size: 2.5vh;
     }
+    //#contactForm > main > section > div > main > form > div.survey_form > div > div.survey_checkbox > p {
+    //  margin-bottom: 10px;
+    //}
   }
 }
 .survey_checkbox {
@@ -131,7 +133,7 @@ textarea {
 }
 .inputGroup {
   background-color: white;
-  margin: 13px 0;
+  margin: 10px 0;
   position: relative;
   width: 100%;
   border: 3px solid cornflowerblue;
@@ -140,11 +142,8 @@ textarea {
   .right {
     width: 16.5vw;
     p {
-      font-size: 1.5vh;
+      font-size: 1.4vh;
       text-align: left;
-    }
-    div.survey_radio > p {
-      margin-bottom: 20px;
     }
   }
   input {
@@ -160,12 +159,12 @@ textarea {
     cursor: pointer;
     visibility: hidden;
 
-  //  TO hide checks/radio default buttons
+    //  TO hide checks/radio default buttons
   }
   label {
     font-size: 2vh;
     text-indent: 1.5vw;
-    padding: 10px 0;
+    padding: 8px 0;
     width: 100%;
     display: block;
     text-align: justify;
@@ -192,8 +191,8 @@ textarea {
     }
     //this after add bg color
     &:after {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       content: '';
       border: 2px solid cornflowerblue;
       background-color: #fff;
@@ -252,17 +251,13 @@ textarea {
     -webkit-appearance: button;
     outline: none;
     text-indent: 10px;
-    overflow: scroll;
-    max-width: 13vw;
     &:focus {
       background: cornflowerblue;
     }
     option {
-      max-width: 12vw;
       background: #066ACA;
       color: darkblue;
-      overflow: scroll;
-      font-size: 1.3vh;
+      font-size: 1.5vh;
     }
     option[disabled] {
       background-color: white;
@@ -278,13 +273,12 @@ textarea {
     width: 20%;
     height: 100%;
     text-align: center;
-    font-size: 28px;
-    line-height: 45px;
+    line-height: 120%;
     color: white;
     background-color: cornflowerblue;
     pointer-events: none;
 
-    }
+  }
   .subject_box:hover::before {
     background: darkblue;
     transform: rotate(180deg);
@@ -304,22 +298,15 @@ textarea {
     width: 20%;
     height: 100%;
     text-align: center;
-    font-size: 28px;
-    line-height: 45px;
+    line-height: 3.6vh;
     color: white;
     background-color: cornflowerblue;
     pointer-events: none;
-    overflow: hidden;
-    max-width: 13vw;
-
   }
   .countries_box:hover::before {
     background: darkblue;
-    overflow: hidden;
-    max-width: 13vw;
   }
   .countries_box:active::before {
     background: cornflowerblue;
   }
 }
-
