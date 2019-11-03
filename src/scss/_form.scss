@@ -38,12 +38,12 @@ header {
   width: 23vw;
   border: 3px solid cornflowerblue;
   border-radius: 5px;
+  position: relative;
   input {
     width: 20vw;
     outline: none;
     font-size: 2vh;
-    padding-left: 1.5vw;
-
+    padding-left: 1.6vw;
     transition: all 0.5s ease-in-out;
     color: darkblue;
     box-shadow: $smallerInnerShadow;
@@ -61,9 +61,30 @@ header {
     color: white;
     width: 3vw;
     text-align: center;
+    font-size: 3vh;
+  }
+  .check_icon {
+    position: absolute;
+    bottom: 7px;
+    left: 3.5vw;
+    color: cornflowerblue;
+    width: 0.1vw;
+    height: auto;
+    font-size: 2.5vh;
+  }
+  .pass_icon {
+    position: absolute;
+    bottom: 7px;
+    right: 45px;
+    color: cornflowerblue;
+    width: 0.1vw;
+    height: auto;
+    font-size: 2.5vh;
+    &:active {
+      color: #000066;
+    }
   }
 }
-
 .area_box {
   height: 4.3vh;
 }
@@ -254,15 +275,19 @@ textarea {
     text-align: center;
     font-size: 28px;
     line-height: 45px;
-    color: rgba(255, 255, 255, 0.5);
+    color: white;
     background-color: cornflowerblue;
     pointer-events: none;
     }
   .subject_box:hover::before {
     background: darkblue;
+    transform: rotate(180deg);
+    @include transition();
   }
+
   .subject_box:active::before {
     background: cornflowerblue;
+    transform: rotate(180deg);
   }
   .countries_box::before {
     content: "\f13a";
@@ -275,7 +300,7 @@ textarea {
     text-align: center;
     font-size: 28px;
     line-height: 45px;
-    color: rgba(255, 255, 255, 0.5);
+    color: white;
     background-color: cornflowerblue;
     pointer-events: none;
   }
