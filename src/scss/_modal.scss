@@ -41,6 +41,12 @@
       justify-content: space-evenly;
       flex-direction: column;
       box-shadow: $innerShadow;
+      h3 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
       article {
         h5 {
           padding-left: 5vw;

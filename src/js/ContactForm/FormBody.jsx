@@ -6,21 +6,36 @@ export default class FormMain extends React.Component {
         pass: '',
         inputType: 'password',
         mail: '',
-        subject: 'Select subject',
-        countries: 'Select country',
+        subject: '',
+        countries: '',
         message: '',
-        appName: true
+        pickedOption: 'like',
+        allCountries: false
     };
+
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value,
             [e.target.pass]: e.target.value,
             [e.target.mail]: e.target.value,
-            [e.target.message]: e.target.value,
-            [e.target.subject]: e.target.subject,
-            [e.target.countries]: e.target.countries,
-            [e.target.appName]: false
+            [e.target.message]: e.target.value
         });
+    };
+    handleRadios = picked => {
+        this.setState({
+            pickedOption: picked.target.value
+        })
+    };
+    handleSubject = select => {
+        this.setState({
+            subject: select.target.value,
+            countries: select.target.value
+        })
+    };
+    handleCountries =  select => {
+        this.setState({
+            countries: select.target.value
+        })
     };
     inputTypeChange = () => {
         if (this.state.inputType === 'password') {
@@ -33,11 +48,33 @@ export default class FormMain extends React.Component {
             })
         }
     };
+    handleSubmit = (event) => {
+        event.preventDefault();
+        if (typeof this.props.formSubmit ==='function') {
+            this.props.formSubmit(this.state.name, this.state.pickedOption, this.state.subject);
+        }
+    };
+    componentDidMount() {
+        fetch(`https://restcountries.eu/rest/v2/all`).then(resp => {
+            return resp.json();
+        }).then(resp =>{
+            console.log(resp);
+            let allNames= [];
+            for (let i = 0; i < resp.length; i++) {
+               allNames.push(resp[i].name)
+            }
+            this.setState({
+                allCountries: allNames
+            });
+        })
+    }
 
     render () {
+        let {allCountries} = this.state;
+        console.log(allCountries.length);
         return (
             <main className='ldt-fade-in'>
-                <form className={'main_form'} onSubmit={this.props.formSubmit}>
+                <form className={'main_form'} onSubmit={this.handleSubmit}>
                     <div className={'contact_form'}>
                         <div className={'inputs'}>
 
@@ -55,7 +92,7 @@ export default class FormMain extends React.Component {
 
                             <div className="input-container">
                                 <i className="fa fa-unlock icon"> </i>
-                                <input  type={this.state.inputType} name='pass' value={this.state.pass} onChange={this.handleChange} placeholder={'Password'} minLength={8} required/>
+                                <input  type={this.state.inputType} name='pass' value={this.state.pass} onChange={this.handleChange} placeholder={'Password'} minLength={8} />
                                 {this.state.inputType === 'password' && <i onClick={this.inputTypeChange} className="pass_icon fas fa-eye"> </i>}
                                 {this.state.inputType === 'text' && <i onClick={this.inputTypeChange} className="pass_icon fas fa-eye-slash" style={{color: 'darkblue'}}> </i>}
                                 {this.state.pass.length > 7 && <i className="check_icon fas fa-check"> </i>}
@@ -64,18 +101,21 @@ export default class FormMain extends React.Component {
                         </div>
                         <div className={'select_form' }>
                             <div className={'subject_box'}>
-                                <select  name='subject' value={this.state.subject} onChange={this.handleChange}  required>
-                                    <option disabled>Select subject</option>
-                                    <option value='Feedback'>Feedback</option>
-                                    <option value='Question'>Question</option>
-                                    <option value='Other'>Other</option>
+                                <select required name='subject' value={this.state.subject} onChange={this.handleSubject} >
+                                    <option value="" disabled >Select subject</option>
+                                    <option value='feedback'>Feedback</option>
+                                    <option value='question'>Question</option>
+                                    <option value='message'>Message</option>
                                 </select>
                             </div>
                             <div className={'countries_box'}>
-                                <select name='countries' value={this.state.countries} onChange={this.handleChange}>
-                                    <option disabled>Select country</option>
-                                    <option value="Romania">Romania</option>
-                                    <option value="USA">USA</option>
+                                <select name='countries' value={this.state.countries} onChange={this.handleCountries}>
+                                    <option value={""} disabled>Select country</option>
+                                    {allCountries === false
+                                        ?
+                                        <option value='loading' disabled>Loading</option>
+                                        :
+                                        allCountries.map( (country, index) => <option key={index} value={country}>{country}</option>)}
                                 </select>
                             </div>
                         </div>
@@ -87,13 +127,13 @@ export default class FormMain extends React.Component {
                         {/*Radio*/}
                         <div className={'checks'}>
                             <div className={'survey_radio'}>
-                                <p>Opinion about CountryInfo!:</p>
+                                <p>Opinion about CountryInfo:</p>
                                 <div className={'inputGroup'}>
-                                    <input type="radio" name='opinion' id='like' value='Like' checked={this.state.appName} onChange={this.handleChange}/>
+                                    <input type="radio" name='opinion' id='like' value='like' checked={this.state.pickedOption === 'like'} onChange={this.handleRadios}/>
                                     <label htmlFor="like">Looks good!</label>
                                  </div>
                                 <div className={'inputGroup'}>
-                                    <input type="radio" name='opinion' id='dislike' value='Dislike'/>
+                                    <input type="radio" name='opinion' id='dislike' value='dislike' checked={this.state.pickedOption === 'dislike'} onChange={this.handleRadios}/>
                                     <label htmlFor="dislike">Could be better!</label>
                                 </div>
                             </div>
@@ -122,10 +162,6 @@ export default class FormMain extends React.Component {
                         </div>
                     </div>
                     <button type={'submit'} className={'btn'}>Submit</button>
-
-                    {/*Thank you picture after submit
-                    Change message based on what radio button was checked and Name*/}
-
                 </form>
             </main>
 

@@ -252,16 +252,21 @@ textarea {
     -webkit-appearance: button;
     outline: none;
     text-indent: 10px;
+    overflow: scroll;
+    max-width: 13vw;
     &:focus {
       background: cornflowerblue;
     }
     option {
-      font-size: 2vh;
+      max-width: 12vw;
       background: #066ACA;
       color: darkblue;
+      overflow: scroll;
+      font-size: 1.3vh;
     }
     option[disabled] {
       background-color: white;
+
     }
   }
   .subject_box::before {
@@ -278,6 +283,7 @@ textarea {
     color: white;
     background-color: cornflowerblue;
     pointer-events: none;
+
     }
   .subject_box:hover::before {
     background: darkblue;
@@ -303,9 +309,14 @@ textarea {
     color: white;
     background-color: cornflowerblue;
     pointer-events: none;
+    overflow: hidden;
+    max-width: 13vw;
+
   }
   .countries_box:hover::before {
     background: darkblue;
+    overflow: hidden;
+    max-width: 13vw;
   }
   .countries_box:active::before {
     background: cornflowerblue;
