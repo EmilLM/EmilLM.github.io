@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class FormMain extends React.Component {
+export default class FormBody extends React.Component {
     state = {
         name: '',
         pass: '',
@@ -58,7 +58,6 @@ export default class FormMain extends React.Component {
         fetch(`https://restcountries.eu/rest/v2/all`).then(resp => {
             return resp.json();
         }).then(resp =>{
-            console.log(resp);
             let allNames= [];
             for (let i = 0; i < resp.length; i++) {
                allNames.push(resp[i].name)
@@ -71,7 +70,6 @@ export default class FormMain extends React.Component {
 
     render () {
         let {allCountries} = this.state;
-        console.log(allCountries.length);
         return (
             <main className='ldt-fade-in'>
                 <form className={'main_form'} onSubmit={this.handleSubmit}>

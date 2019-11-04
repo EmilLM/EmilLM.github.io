@@ -8,16 +8,19 @@ import ModalContainer from "./ContactForm/ModalContainer.jsx";
 import FormHeader from "./ContactForm/FormHeader.jsx";
 import Footer from "./ContactForm/Footer.jsx";
 import AfterSubmit from "./ContactForm/AfterSubmit.jsx";
+import Modal from "./HeaderClasses/Modal.jsx";
 
-document.addEventListener('DOMContentLoaded', ()=>{
 
 
-class FormMain extends React.Component {
+
+export default class FormMain extends React.Component {
     state = {
         isFormValid : false,
         name: '',
         pickedOption: '',
-        subject: ''
+        subject: '',
+        modal: false,
+        modalClass: 'ldt-zoom-in'
     };
     handleSubmit = (value, picked, option) => {
 
@@ -27,12 +30,32 @@ class FormMain extends React.Component {
             subject: option
         })
     };
+    // displays About modal
+    modalToggle= () => {
+        this.setState({
+            modal: !this.state.modal,
+            modalClass: 'ldt-zoom-in'
+
+        })
+    };
+    modalClose = () => {
+        this.setState({
+            modalClass: 'ldt-zoom-out'
+        })
+    };
+    modalCloseAnimation = () => {
+        if (this.state.modalClass === 'ldt-zoom-out') {
+            this.setState({
+                modal: !this.state.modal
+            })
+        }
+    };
     render() {
         let {name, pickedOption, subject} = this.state;
         return (
             <>
                 <Header>
-                    <MenuLogo/>
+                    <MenuLogo onModalToggle={this.modalToggle}/>
                 </Header>
                 <Container>
                     <ModalContainer>
@@ -44,14 +67,14 @@ class FormMain extends React.Component {
                         <FormBody formSubmit={this.handleSubmit}/>}
                         <Footer/>
                     </ModalContainer>
+                    {this.state.modal && <Modal onModalX={this.modalClose} status={this.state.modal} onClass={this.state.modalClass} onAnimation={this.modalCloseAnimation} />}
                 </Container>
             </>
         )
     }
 }
 
-    ReactDOM.render(
-        <FormMain />,
-        document.getElementById('contactForm')
-    );
-});
+// ReactDOM.render(
+//     <FormMain />,
+//     document.getElementById('contactForm')
+// );

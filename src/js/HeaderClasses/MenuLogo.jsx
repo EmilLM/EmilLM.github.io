@@ -1,4 +1,11 @@
 import React from 'react';
+import {
+    HashRouter,
+    Route,
+    Link,
+    Switch,
+    NavLink,
+} from 'react-router-dom';
 
 export default class MenuLogo extends React.Component {
 
@@ -6,8 +13,15 @@ export default class MenuLogo extends React.Component {
         if (typeof this.props.onModalToggle ==='function') {
             this.props.onModalToggle();
         }
+        if (typeof this.props.onModalDisplay === 'function') {
+            this.props.onModalDisplay();
+        }
     };
     render () {
+        const activeStyle= {
+            backgroundColor: 'blue',
+            textDecoration: 'underline'
+        };
         return (
             <div className="menu_logo">
                 <div>
@@ -17,9 +31,9 @@ export default class MenuLogo extends React.Component {
                     <div className={'flip-box-inner'}>
                         <button className="btn flip-box-front">Menu</button>
                         <ul className="dropdown-content menu_list flip-box-back">
-                            <li className={'ldt-slide-bottom-in'}><a href="https://www.coderslab.ro/" target={'_blank'}>Home</a></li>
+                            <li className={'ldt-slide-bottom-in'}><NavLink to="/" >Home</NavLink></li>
                             <li><a onClick={this.handleClick} href='#'>About</a></li>
-                            <li className={'ldt-slide-top-in'}><a href="#">Contact</a></li>
+                            <li className={'ldt-slide-top-in'}><NavLink to={'/contact'} activeStyle={activeStyle}>Contact</NavLink></li>
                         </ul>
                      </div>
                 </div>

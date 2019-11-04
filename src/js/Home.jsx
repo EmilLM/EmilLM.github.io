@@ -14,9 +14,8 @@ import OtherIndicatorsFromSearch from "./AppContent/OtherIndicatorsFromSearch.js
 import Modal from "./HeaderClasses/Modal.jsx";
 
 
-document.addEventListener("DOMContentLoaded",function () {
 
-class App extends React.Component {
+export default class Home extends React.Component {
     state = {
       isModuleVisible: false,
       className: 'ldt-zoom-in',
@@ -216,8 +215,7 @@ class App extends React.Component {
     }
 }
 
-    ReactDOM.render(
-        <App />,
-        document.getElementById('app')
-    )
-});
+// ReactDOM.render(
+//     <Home />,
+//     document.getElementById('app')
+// );

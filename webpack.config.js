@@ -1,6 +1,6 @@
 const path = require("path");
 const entryPath = "./";
-const entryFile = "FormMain.jsx";
+const entryFile = "App.jsx";
 const scssFile = "main.scss";
 
 module.exports = {
