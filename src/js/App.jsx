@@ -12,20 +12,20 @@ import FormMain from "./FormMain.jsx";
 import Home from "./Home.jsx";
 import NotFound from "./NotFound.jsx";
 
+
 document.addEventListener('DOMContentLoaded', ()=>{
 
 
 class App extends React.Component{
     render() {
         return (
-            <HashRouter>
-                {/*<MenuLogo/>*/}
+            <BrowserRouter>
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route path='/contact' component={FormMain}/>
                     <Route component={NotFound}/>
                 </Switch>
-            </HashRouter>
+            </BrowserRouter>
         )
     }
 }

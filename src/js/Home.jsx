@@ -159,18 +159,29 @@ export default class Home extends React.Component {
                     console.log(resp);
                     this.setState({
                         dataByIP: resp,
-                        // countryCode: resp[0].alpha3Code
+                        countryCode: resp[0].alpha3Code
                     });
-                    // let {countryCode} =this.state;
-                    // fetch(`https://cors-anywhere.herokuapp.com/http://ec2-54-174-131-205.compute-1.amazonaws.com/API/HDRO_API.php/country_code=`
-                    //     + countryCode +`/indicator_id=47906/year=2014,2015,2016,2017`).then(resp => {
-                    //     return resp.json();
-                    // }).then(resp => {
-                    //     console.log(resp);
-                    //     this.setState({
-                    //         dataByCode: resp
-                    //     })
-                    // })
+                    let {countryCode} =this.state;
+                    const population = 'SP.POP.TOTL';
+                    const popgrowth = "SP.POP.GROW";
+                    const emissions = 'EN.ATM.CO2E.PC';
+                    const gdp = "EN.ATM.CO2E.PC";
+                    const gdpGrowth = "NY.GDP.MKTP.KD.ZG";
+                    const gdpPC = "NY.GDP.PCAP.PP.CD";
+                    const inflation = "NY.GDP.DEFL.KD.ZG";
+                    const CPI = "FP.CPI.TOTL";
+                    const GNIPPP = "NY.GNP.PCAP.PP.CD";
+                    const netUsers = "IT.NET.USER.ZS";
+                    const unemployment = "SL.UEM.TOTL.ZS";
+
+                    fetch(`https://api.worldbank.org/v2/en/country/` + countryCode + `/indicator/SL.GDP.PCAP.EM.KD;SP.POP.TOTL?format=json&scale=y&date=2018&source=2`).then(resp => {
+                        return resp.json();
+                    }).then(resp => {
+                        console.log(resp);
+                        this.setState({
+                            dataByCode: resp
+                        })
+                    })
                 })
             });
         });

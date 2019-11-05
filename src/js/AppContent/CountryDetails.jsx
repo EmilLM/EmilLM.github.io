@@ -3,21 +3,22 @@ import React from 'react';
 export default class CountryDetails extends React.Component {
 
     render() {
+        let {dataIP} = this.props;
         return (
             <>
-                {this.props.dataIP === false
+                {dataIP === false
                     ?
                 <img style={{margin: '8vh auto', width:'8vw', height: 'auto'}} src={'../../assets/images/animIcons/earth_loading.svg'} alt={'loading icon'}/>
                     :
                 <>
                 <div id='countryIP' className="country_details ">
                     <a href={"https://en.wikipedia.org/wiki/" + this.props.ipCountry} target="_blank">
-                    <img className="flag ldt-blur-in" src={this.props.dataIP[0].flag} alt={'flag'} />
+                    <img className="flag ldt-blur-in" src={dataIP[0].flag} alt={'flag'} />
                     </a>
                     <div className="currency_country ldt-slide-bottom-in">
-                        <div className="countryName">{this.props.dataIP[0].name}</div>
-                        <div className="currency">{this.props.dataIP[0].currencies[0].code}</div>
-                        <div className="language">{this.props.dataIP[0].languages[0].name} </div>
+                        <div className="countryName">{dataIP[0].name}</div>
+                        <div className="currency">{dataIP[0].currencies[0].code}</div>
+                        <div className="language">{dataIP[0].languages[0].name} </div>
                     </div>
                 </div>
                 <ul id='mainIndicators' className="main_indicators ldt-fall-in">

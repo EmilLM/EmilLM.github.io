@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Header from "./HeaderClasses/Header.jsx";
 import MenuLogo from "./HeaderClasses/MenuLogo.jsx";
 import Container from "./AppContent/Container.jsx";
@@ -67,14 +66,10 @@ export default class FormMain extends React.Component {
                         <FormBody formSubmit={this.handleSubmit}/>}
                         <Footer/>
                     </ModalContainer>
-                    {this.state.modal && <Modal onModalX={this.modalClose} status={this.state.modal} onClass={this.state.modalClass} onAnimation={this.modalCloseAnimation} />}
+                    {this.state.modal && <Modal onModalX={this.modalClose}  onClass={this.state.modalClass} onAnimation={this.modalCloseAnimation} />}
                 </Container>
             </>
         )
     }
 }
 
-// ReactDOM.render(
-//     <FormMain />,
-//     document.getElementById('contactForm')
-// );
