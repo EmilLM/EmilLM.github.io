@@ -159,7 +159,7 @@ export default class FormBody extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <button type={'submit'} className={'btn'}>Submit</button>
+                    <button type={'submit'} className={'btn btn-white btn-animation-1'}>Submit</button>
                 </form>
             </main>
 

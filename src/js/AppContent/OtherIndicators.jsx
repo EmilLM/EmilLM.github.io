@@ -2,9 +2,10 @@ import React from 'react';
 
 export default class OtherIndicators extends React.Component {
     render () {
+        let {dataIP, dataCode} = this.props;
         return (
             <>
-                {this.props.dataIP === false
+                {dataIP === false
                     ?
                 <img style={{margin: '8vh auto', width:'8vw', height: 'auto'}} src={'../../assets/images/animIcons/earth_loading.svg'} alt={'loading icon'}/>
                     :
@@ -12,7 +13,7 @@ export default class OtherIndicators extends React.Component {
                     <li className={'ldt-slide-left-in tooltip '}>
                         <div className="indicator_name">UNEMPLOYED</div>
                         <div className="indicator_icon"><img src={"../../assets/images/animIcons/work.svg"} alt={'work icon'} /></div>
-                        <div className="indicator_value">5.2%</div>
+                        <div className="indicator_value">{dataCode?dataCode[1][5].value: ''}%</div>
                         <div className="bottom">
                             <p className='tooltipText'>
                                 Percentage of the <span>labour force</span> population ages 15 and older that is <span>not in paid employment or self-employed</span>
@@ -22,31 +23,18 @@ export default class OtherIndicators extends React.Component {
                         </div>
                     </li>
                     <li className={'ldt-slide-bottom-in tooltip'}>
-                        <div className="indicator_name">GDP</div>
-                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/GDP.svg"} alt={'GDP icon'} /></div>
-                        <div className="indicator_value">260mld $</div>
+                        <div className="indicator_name">GDP GROWTH</div>
+                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/growth.svg"} alt={'GDP icon'} /></div>
+                        <div className="indicator_value">{dataCode?dataCode[1][1].value: ''}%</div>
                         <div className="bottom">
                             <p className='tooltipText'>
-                                Gross domestic products (GDP) is a monetary measure of the <span>market value</span> of all the final
+                               The annual increase in gross domestic products (GDP), which is a monetary measure of the <span>market value</span> of all the final
                                 <span>goods and services produced in a year</span> in a country.
                             </p>
                             <i> </i>
                         </div>
                     </li>
-
                     <li className={'ldt-slide-top-in tooltip'}>
-                        <div className="indicator_name">NET USERS</div>
-                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/wifi.svg"} alt={'wifi icon'} /></div>
-                        <div className="indicator_value">60%</div>
-                        <div className="bottom">
-                            <p className='tooltipText'>
-                                The percentage of population that routinely accesses the internet.
-                            </p>
-                            <i> </i>
-                        </div>
-                    </li>
-                    <li className={'ldt-slide-bottom-in tooltip'}>
-                        {/*//Gini din restcountries*/}
                         <div className="indicator_name">GINI</div>
                         <div className="indicator_icon"><img src={"../../assets/images/animIcons/GINI.svg"} alt={'GINI icon'} /></div>
                         <div className="indicator_value">{this.props.dataIP[0].gini}</div>
@@ -58,13 +46,25 @@ export default class OtherIndicators extends React.Component {
                             <i> </i>
                         </div>
                     </li>
-                    <li className={'ldt-slide-right-in tooltip'}>
-                        <div className="indicator_name">EMISSIONS</div>
-                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/carbon.svg"} alt={'C02 icon'} /></div>
-                        <div className="indicator_value">2204t</div>
+                    <li className={'ldt-slide-bottom-in tooltip'}>
+                        <div className="indicator_name">NET USERS</div>
+                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/wifi.svg"} alt={'wifi icon'} /></div>
+                        <div className="indicator_value">{dataCode?dataCode[1][4].value: ''}%</div>
                         <div className="bottom">
                             <p className='tooltipText'>
-                                The <span>per capita tonnes</span> of carbon dioxide dispersed into the atmosphere.
+                                The percentage of population that routinely accesses the internet.
+                            </p>
+                            <i> </i>
+                        </div>
+                    </li>
+                    <li className={'ldt-slide-right-in tooltip'}>
+                        <div className="indicator_name">INFLATION</div>
+                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/inflat.svg"} alt={'C02 icon'} /></div>
+                        <div className="indicator_value">{dataCode?dataCode[1][2].value: ''}%</div>
+                        <div className="bottom">
+                            <p className='tooltipText'>
+                                Inflation is a quantitative measure of the rate at which the <span>average price level</span> of a basket of selected goods and services in an economy <span>increases</span> over a period of time.
+                                Inflation indicates a <span>decrease in the purchasing power</span> of a nation’s currency.
                             </p>
                             <i> </i>
                         </div>

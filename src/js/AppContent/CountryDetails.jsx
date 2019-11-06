@@ -3,10 +3,10 @@ import React from 'react';
 export default class CountryDetails extends React.Component {
 
     render() {
-        let {dataIP} = this.props;
+        let {dataIP, dataCode} = this.props;
         return (
             <>
-                {dataIP === false
+                {dataIP === false && dataCode === false
                     ?
                 <img style={{margin: '8vh auto', width:'8vw', height: 'auto'}} src={'../../assets/images/animIcons/earth_loading.svg'} alt={'loading icon'}/>
                     :
@@ -24,35 +24,32 @@ export default class CountryDetails extends React.Component {
                 <ul id='mainIndicators' className="main_indicators ldt-fall-in">
                     <li className='tooltip'>
                         <img src={"../../assets/images/population.png"} alt={'population icon'} />
-                        <span className="age_value"> <span>Median age:</span> 42</span>
-                        {/*{this.props.dataCode?this.props.dataCode.indicator_value[this.props.countryCode][47906][2015]:'' }*/}
+                        <span className="pop_value"> <span>Pop. growth:</span>  {dataCode?dataCode[1][0].value: ''}%</span>
                         <div className="right">
                             <p className='tooltipText'>
-                                The average age of a country's population.
+                                The annual population growth of residents of a country.
                             </p>
                             <i> </i>
                         </div>
                     </li>
                     <li className='tooltip'>
                         <img src={"../../assets/images/income.png"} alt={'income icon'} />
-                        <span className="income_value"> <span>GNI: </span> 23.000$</span>
+                        <span className="income_value"> <span>GNI: </span> {dataCode?dataCode[1][3].value: ''}.000$</span>
                         <div className="right">
                             <p className='tooltipText'>
                                 <span>GNI per capita</span> is the total amount of money earned by a nation's citizens and businesses across the world,
-                                minus the income of non-citizens residents, converted to international dollars using PPP rates.
+                                minus the income of non-citizens residents, converted to  current international $ using  PPP rates.
                             </p>
                             <i> </i>
                         </div>
                     </li>
                     <li className='tooltip'>
-                        <img src={"../../assets/images/hdi.png"} alt={'hdi icon'} />
-                        <span className="pop_value"> <span>HDI index:</span> 52</span>
+                        <img src={"../../assets/images/gdp.png"} alt={'gdp icon'} />
+                        <span> <span>GDP:</span> {dataCode?dataCode[1][6].value: ''}${dataCode?dataCode[1][6].scale: ''}</span>
                         <div className="right">
                             <p  className='tooltipText'>
-                                The Human Development Index (HDI) is a statistic composite
-                                index of <span>life expectancy</span>, <span>education</span>, and <span>per capita
-                                income</span> indicators, which are used to rank
-                                countries into four tiers of human development
+                                Gross domestic products (GDP) is a monetary measure of the <span>market value</span> of all the final
+                                <span>goods and services produced in a year</span> in a country. Value is expressed in current $.
                             </p>
                             <i> </i>
                         </div>

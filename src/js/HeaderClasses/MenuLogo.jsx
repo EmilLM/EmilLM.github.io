@@ -17,7 +17,6 @@ export default class MenuLogo extends React.Component {
     render () {
         const activeStyle= {
             backgroundColor: 'blue',
-            textDecoration: 'underline'
         };
         return (
             <div className="menu_logo">

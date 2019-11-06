@@ -24,7 +24,10 @@ export default class CountryModule extends React.Component {
                 {this.state.isModuleShowing === true
                     ?
                 <article className={`country_module ` + this.state.className} onAnimationEnd={this.handleAnimation} >
-                    <button id="country_button" className="close_button" onClick={this.handleClick}>X</button>
+                    <div className="close-container" onClick={this.handleClick}>
+                        <div className="leftRight"> </div>
+                        <div className="rightLeft"> </div>
+                    </div>
                     {this.props.children}
                 </article>
                     :

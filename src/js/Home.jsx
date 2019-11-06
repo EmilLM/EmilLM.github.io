@@ -23,8 +23,10 @@ export default class Home extends React.Component {
       countryModuleClassName: 'ldt-zoom-in',
       dataByIP: false,
       dataByCode: false,
+      dataBySearch: false,
       countrySearch: false,
       countryCode: false,
+      countryCodeSearch: false,
       ipCountry : false,
       errorStatus: false,
       modal: false,
@@ -103,43 +105,29 @@ export default class Home extends React.Component {
     sendCountryName = value => {
         fetch(`https://restcountries.eu/rest/v2/name/` + value +`?fullText=true`).then(resp => {
             return resp.json();
-        }).then(resp => {
-            this.setState({
-                countrySearch: resp,
-                countryCode: resp[0].alpha3Code,
-            })
-
-            // }, () => {
-            //     let {countryCode} =this.state;
-            //     console.log(countryCode);
-            //     const hdiIndicator = 103706;
-            //     const hdiRank = 146206;
-            //     const gdpIndicator = 143306; //Gross domestic product (GDP), total (2011 PPP $ billions)
-            //     const popIndicator = 44206;
-            //     const giniIndicator = 67106;
-            //     const unemploymentIndicator = 140606;
-            //     const emissionsIndicator = 27706;
-            //     const internetUsers = 43606;
-            //     const medianAge = 47906;
-            //
-            //     fetch(`https://cors-anywhere.herokuapp.com/http://ec2-54-174-131-205.compute-1.amazonaws.com/API/HDRO_API.php/country_code=`
-            //         + countryCode +`/indicator_id=`+internetUsers+`,`+hdiRank+`,`+popIndicator+`/year=2017/structure=ciy`).then(resp => {
-            //         return resp.json();
-            //     }).then(resp => {
-            //         console.log(resp);
-            //         this.setState({
-            //             dataByCode: resp
-            //         })
-            //     }).catch( err => {
-            //         console.log('Error2!', err);
-            //     });
-            // });
+            }).then(resp => {
+                this.setState({
+                    countrySearch: resp,
+                    countryCodeSearch: resp[0].alpha3Code,
+                },() => {
+                    let {countryCodeSearch} =this.state;
+                    fetch(`https://api.worldbank.org/v2/en/country/` + countryCodeSearch +
+                        `/indicator/SP.POP.GROW;NY.GDP.MKTP.KD.ZG;NY.GDP.DEFL.KD.ZG;NY.GNP.PCAP.PP.CD;IT.NET.USER.ZS;SL.UEM.TOTL.ZS;NY.GDP.MKTP.CD?format=json&scale=y&date=2018&source=2`).then(resp => {
+                        return resp.json();
+                    }).then(resp => {
+                        console.log(resp);
+                        this.setState({
+                            dataBySearch: resp
+                        })
+                    })
+                }
+            )
         }).catch( err => {
             console.log('Error!', err);
             this.setState({
                 errorStatus: err
             })
-        });
+        })
     };
     componentDidMount() {
         //Fetch country from IP API
@@ -153,37 +141,26 @@ export default class Home extends React.Component {
                 ipCountry: ipResp.country
             }, () => {
                 let {ipCountry} = this.state;
-                fetch(`https://restcountries.eu/rest/v2/name/`+ ipCountry +`?fullText=true`).then(resp=>{
-                    return resp.json();
-                }).then(resp=>{
-                    console.log(resp);
-                    this.setState({
-                        dataByIP: resp,
-                        countryCode: resp[0].alpha3Code
-                    });
-                    let {countryCode} =this.state;
-                    const population = 'SP.POP.TOTL';
-                    const popgrowth = "SP.POP.GROW";
-                    const emissions = 'EN.ATM.CO2E.PC';
-                    const gdp = "EN.ATM.CO2E.PC";
-                    const gdpGrowth = "NY.GDP.MKTP.KD.ZG";
-                    const gdpPC = "NY.GDP.PCAP.PP.CD";
-                    const inflation = "NY.GDP.DEFL.KD.ZG";
-                    const CPI = "FP.CPI.TOTL";
-                    const GNIPPP = "NY.GNP.PCAP.PP.CD";
-                    const netUsers = "IT.NET.USER.ZS";
-                    const unemployment = "SL.UEM.TOTL.ZS";
-
-                    fetch(`https://api.worldbank.org/v2/en/country/` + countryCode + `/indicator/SL.GDP.PCAP.EM.KD;SP.POP.TOTL?format=json&scale=y&date=2018&source=2`).then(resp => {
+                    fetch(`https://restcountries.eu/rest/v2/name/`+ ipCountry +`?fullText=true`).then(resp=>{
                         return resp.json();
-                    }).then(resp => {
-                        console.log(resp);
+                    }).then(resp=>{
                         this.setState({
-                            dataByCode: resp
+                            dataByIP: resp,
+                            countryCode: resp[0].alpha3Code
+                        });
+                        let {countryCode} =this.state;
+                        fetch(`https://api.worldbank.org/v2/en/country/` + countryCode +
+                            `/indicator/SP.POP.GROW;NY.GDP.MKTP.KD.ZG;NY.GDP.DEFL.KD.ZG;NY.GNP.PCAP.PP.CD;IT.NET.USER.ZS;SL.UEM.TOTL.ZS;NY.GDP.MKTP.CD?format=json&scale=y&date=2018&source=2`).then(resp => {
+                            return resp.json();
+                        }).then(resp => {
+                            // console.log(resp);
+                            this.setState({
+                                dataByCode: resp
+                            })
                         })
                     })
-                })
-            });
+                }
+            );
         });
     }
     render () {
@@ -198,7 +175,7 @@ export default class Home extends React.Component {
                     {this.state.isModuleVisible && <SearchModule moduleState={this.state.isModuleVisible} onClass={this.state.className} onAnimation={this.handleAnimation}
                                                                  onX={this.closeSearch} onSend={this.sendCountryName} onSearch={this.displayCountryModule}
                                                                  countrySearch={this.state.countrySearch} onError={this.state.errorStatus} onErrorChange={this.handleErrorCheck}/>}
-                    <CountryModule dataIP={this.state.dataByIP}>
+                    <CountryModule >
                         <CountryDetails  dataIP={this.state.dataByIP} dataCode={this.state.dataByCode}  ipCountry={this.state.ipCountry} />
                         <OtherIndicators dataIP={this.state.dataByIP} dataCode={this.state.dataByCode} ipCountry={this.state.ipCountry} />
                     </CountryModule>
@@ -212,8 +189,8 @@ export default class Home extends React.Component {
                             <>
                                 {this.state.isSearchClicked && <CountryModuleFromSearch onClose={this.handleSearchClick} onCountryAnimation={this.searchAnimation}
                                                                               countryModuleState={this.state.isSearchClicked} countryModuleClassName={this.state.countryModuleClassName}>
-                                    <CountryDetailsFromSearch countrySearch={this.state.countrySearch}/>
-                                    <OtherIndicatorsFromSearch countrySearch={this.state.countrySearch}/>
+                                    <CountryDetailsFromSearch dataSearch={this.state.dataBySearch} countrySearch={this.state.countrySearch}/>
+                                    <OtherIndicatorsFromSearch dataSearch={this.state.dataBySearch} countrySearch={this.state.countrySearch} dataIP={this.state.dataByIP}/>
                                 </CountryModuleFromSearch>}
                             </>
                         }
@@ -226,7 +203,3 @@ export default class Home extends React.Component {
     }
 }
 
-// ReactDOM.render(
-//     <Home />,
-//     document.getElementById('app')
-// );

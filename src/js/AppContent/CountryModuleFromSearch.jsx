@@ -19,7 +19,10 @@ export default class CountryModuleFromSearch extends React.Component {
                 {this.props.countryModuleState === true
                     ?
                     <article className={`country_module ` + this.props.countryModuleClassName} onAnimationEnd={this.handleAnimation} >
-                        <button id="country_button" className="close_button" onClick={this.handleClick}>X</button>
+                        <div className="close_button close-container" onClick={this.handleClick}>
+                            <div className="leftRight"> </div>
+                            <div className="rightLeft"> </div>
+                        </div>
                         {this.props.children}
                     </article>
                     :

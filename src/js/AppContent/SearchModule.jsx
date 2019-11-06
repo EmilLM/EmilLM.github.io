@@ -58,7 +58,10 @@ export default class SearchModule extends React.Component {
                 {this.props.moduleState === true
                     ?
                     <article onAnimationEnd={this.handleAnimation} className={'search_module ' + this.props.onClass}>
-                        <button className="close_button" onClick={this.handleClick}>X</button>
+                        <div className="close-container" onClick={this.handleClick}>
+                            <div className="leftRight"> </div>
+                            <div className="rightLeft"> </div>
+                        </div>
 
                         <form  autoComplete="off" onSubmit={this.handleSubmit}>
 

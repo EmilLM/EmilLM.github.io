@@ -44,9 +44,6 @@
       h3 {
         text-align: center;
       }
-      p {
-        text-align: center;
-      }
       article {
         h5 {
           padding-left: 5vw;
@@ -76,6 +73,13 @@
       color: $MainColor;
       font-size: 1.8vh;
       line-height: 2.5vh;
+      a {
+        text-decoration: none;
+        color: $MainColor;
+        &:hover {
+          color: darkblue;
+        }
+      }
     }
   }
 }

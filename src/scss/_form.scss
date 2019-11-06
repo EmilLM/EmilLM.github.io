@@ -1,3 +1,5 @@
+@import "variables";
+@import "mixins";
 
 header {
   display: flex;
@@ -45,7 +47,6 @@ header {
     outline: none;
     font-size: 2vh;
     padding-left: 1.6vw;
-    transition: all 0.5s ease-in-out;
     color: darkblue;
     box-shadow: $smallerInnerShadow;
     &:focus {
@@ -94,7 +95,7 @@ textarea {
   border: 3px solid cornflowerblue;
   transition: all 0.5s ease-in-out;
   padding: 0.35vw;
-  height: 4.3vh;
+  height: 4.5vh;
   color: darkblue;
   box-shadow: $smallerInnerShadow;
   border-radius: 5px;
@@ -277,17 +278,13 @@ textarea {
     color: white;
     background-color: cornflowerblue;
     pointer-events: none;
-
   }
   .subject_box:hover::before {
     background: darkblue;
-    transform: rotate(180deg);
-    @include transition();
   }
 
   .subject_box:active::before {
     background: cornflowerblue;
-    transform: rotate(180deg);
   }
   .countries_box::before {
     content: "\f13a";
@@ -308,5 +305,62 @@ textarea {
   }
   .countries_box:active::before {
     background: cornflowerblue;
+  }
+}
+//Submit style
+.main_form {
+  .btn:link,
+  .btn:visited{
+    text-decoration: none;
+    text-transform:uppercase;
+    transition: all .5s;
+  }
+
+  .btn:hover{
+    box-shadow: $boxShadowBefore;
+    transform : translateY(-3px);
+  }
+
+  .btn:active{
+    box-shadow: $boxShadowBefore;
+    transform: translateY(-1px);
+  }
+
+  .btn-bottom-animation-1{
+    animation:comeFromBottom 1s ease-out .8s;
+  }
+
+  .btn::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    border-radius: 8px;
+    z-index:-1;
+    transition: all .5s;
+  }
+
+  .btn-white::after {
+    background: #fff;
+  }
+
+  .btn-animation-1:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+    background: cornflowerblue;
+    box-shadow: $boxShadowBefore;
+  }
+
+  @keyframes comeFromBottom{
+    0%{
+      opacity:0;
+      transform:translateY(40px);
+    }
+    100%{
+      opacity:1;
+      transform:translateY(0);
+    }
   }
 }

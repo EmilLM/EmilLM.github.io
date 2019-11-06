@@ -3,39 +3,38 @@ import React from 'react';
 export default class CountryDetailsFromSearch extends React.Component {
 
     render() {
-
+        let {countrySearch, dataSearch} = this.props;
         return (
             <>
-                {this.props.countrySearch === false
+                {countrySearch === false
                     ?
                     <img style={{margin: '8vh auto', width:'8vw', height: 'auto'}} src={'../../assets/images/animIcons/earth_loading.svg'} alt={'loading icon'}/>
                     :
                     <>
                         <div className="country_details ">
-                            <a href={"https://en.wikipedia.org/wiki/" + this.props.countrySearch[0].name} target="_blank">
-                                <img className="flag ldt-blur-in" src={this.props.countrySearch[0].flag} alt={'flag icon'} />
+                            <a href={"https://en.wikipedia.org/wiki/" + countrySearch[0].name} target="_blank">
+                                <img className="flag ldt-blur-in" src={countrySearch[0].flag} alt={'flag icon'} />
                             </a>
                             <div className="currency_country ldt-slide-bottom-in">
-                                <div className="countryName">{this.props.countrySearch[0].name}</div>
-                                <div className="currency">{this.props.countrySearch[0].currencies[0].code}</div>
-                                <div className="language">{this.props.countrySearch[0].languages[0].name} </div>
+                                <div className="countryName">{countrySearch[0].name}</div>
+                                <div className="currency">{countrySearch[0].currencies[0].code}</div>
+                                <div className="language">{countrySearch[0].languages[0].name} </div>
                             </div>
                         </div>
                         <ul className="main_indicators ldt-fall-in">
                             <li className='tooltip'>
                                 <img src={"../../assets/images/population.png"} alt={'population icon'} />
-                                <span className="age_value"> <span>Median age:</span> 42</span>
-                                {/*{this.props.dataCode?this.props.dataCode.indicator_value[this.props.countryCode][47906][2015]:'' }*/}
+                                <span className="pop_value"> <span>Pop. growth:</span>  {dataSearch?dataSearch[1][0].value: ''}%</span>
                                 <div className="right">
                                     <p className='tooltipText'>
-                                        The average age of a country's population.
+                                        The annual population growth of residents of a country.
                                     </p>
                                     <i> </i>
                                 </div>
                             </li>
                             <li className='tooltip'>
                                 <img src={"../../assets/images/income.png"} alt={'income icon'} />
-                                <span className="income_value"> <span>GNI: </span> 23.000$</span>
+                                <span className="income_value"> <span>GNI: </span> {dataSearch?dataSearch[1][3].value: ''}.000$</span>
                                 <div className="right">
                                     <p className='tooltipText'>
                                         <span>GNI per capita</span> is the total amount of money earned by a nation's citizens and businesses across the world,
@@ -45,14 +44,12 @@ export default class CountryDetailsFromSearch extends React.Component {
                                 </div>
                             </li>
                             <li className='tooltip'>
-                                <img src={"../../assets/images/hdi.png"} alt={'hdi icon'} />
-                                <span className="pop_value"> <span>HDI index:</span> 52</span>
+                                <img src={"../../assets/images/gdp.png"} alt={'gdp icon'} />
+                                <span> <span>GDP:</span> {dataSearch?dataSearch[1][6].value: ''}${dataSearch?dataSearch[1][6].scale: ''}</span>
                                 <div className="right">
                                     <p  className='tooltipText'>
-                                        The Human Development Index (HDI) is a statistic composite
-                                        index of <span>life expectancy</span>, <span>education</span>, and <span>per capita
-                                income</span> indicators, which are used to rank
-                                        countries into four tiers of human development
+                                        Gross domestic products (GDP) is a monetary measure of the <span>market value</span> of all the final
+                                        <span>goods and services produced in a year</span> in a country. Value is expressed in current $.
                                     </p>
                                     <i> </i>
                                 </div>
