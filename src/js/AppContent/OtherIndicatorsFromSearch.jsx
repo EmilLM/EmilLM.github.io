@@ -5,7 +5,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
         let {countrySearch, dataSearch} = this.props;
         return (
             <>
-                {countrySearch === false
+                {dataSearch === false
                     ?
                     <img style={{margin: 'vh auto', width:'8vw', height: 'auto'}} src={'../../assets/images/animIcons/earth_loading.svg'} alt={'loading icon'}/>
                     :
@@ -13,7 +13,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
                         <li className={'ldt-slide-left-in  tooltip'}>
                             <div className="indicator_name">UNEMPLOYED</div>
                             <div className="indicator_icon"><img src={"../../assets/images/animIcons/work.svg"} alt={'work icon'} /></div>
-                            <div className="indicator_value">{dataSearch?dataSearch[1][5].value: ''}%</div>
+                            <div className="indicator_value">{dataSearch[1][5].value}{dataSearch[1][5].value?'%':'N/A'}</div>
                             <div className="bottom">
                                 <p className='tooltipText'>
                                     Percentage of the <span>labour force</span> population ages 15 and older that is <span>not in paid employment or self-employed</span>
@@ -25,7 +25,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
                         <li className={'ldt-slide-bottom-in tooltip'}>
                             <div className="indicator_name">GDP GROWTH</div>
                             <div className="indicator_icon"><img src={"../../assets/images/animIcons/growth.svg"} alt={'GDP icon'} /></div>
-                            <div className="indicator_value">{dataSearch?dataSearch[1][1].value: ''}%</div>
+                            <div className="indicator_value">{dataSearch[1][1].value}{dataSearch[1][1].value?'%':'N/A'}</div>
                             <div className="bottom">
                                 <p className='tooltipText'>
                                     The annual increase in gross domestic products (GDP), which is a monetary measure of the <span>market value</span> of all the final
@@ -38,7 +38,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
                         <li className={'ldt-slide-top-in tooltip'}>
                             <div className="indicator_name">GINI</div>
                             <div className="indicator_icon"><img src={"../../assets/images/animIcons/GINI.svg"} alt={'GINI icon'} /></div>
-                            <div className="indicator_value">{this.props.dataIP[0].gini}</div>
+                            <div className="indicator_value">{countrySearch?countrySearch[0].gini:''}</div>
                             <div className="bottom">
                                 <p className='tooltipText'>
                                     Measure of the <span>deviation</span> of the distribution of income among individuals or households within a country
@@ -50,7 +50,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
                         <li className={'ldt-slide-bottom-in tooltip'}>
                             <div className="indicator_name">NET USERS</div>
                             <div className="indicator_icon"><img src={"../../assets/images/animIcons/wifi.svg"} alt={'wifi icon'} /></div>
-                            <div className="indicator_value">{dataSearch?dataSearch[1][4].value:''}%</div>
+                            <div className="indicator_value">{dataSearch[1][4].value}{dataSearch[1][4].value?'%':'N/A'}</div>
                             <div className="bottom">
                                 <p className='tooltipText'>
                                     The percentage of population that routinely accesses the internet.
@@ -61,7 +61,7 @@ export default class OtherIndicatorsFromSearch extends React.Component {
                         <li className={'ldt-slide-right-in tooltip'}>
                             <div className="indicator_name">INFLATION</div>
                             <div className="indicator_icon"><img src={"../../assets/images/animIcons/inflat.svg"} alt={'C02 icon'} /></div>
-                            <div className="indicator_value">{dataSearch?dataSearch[1][2].value: ''}%</div>
+                            <div className="indicator_value">{dataSearch[1][2].value}{dataSearch[1][2].value?'%':'N/A'}</div>
                             <div className="bottom">
                                 <p className='tooltipText'>
                                     Inflation is a quantitative measure of the rate at which the <span>average price level</span> of a basket of selected goods and services in an economy <span>increases</span> over a period of time.

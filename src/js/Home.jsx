@@ -190,7 +190,7 @@ export default class Home extends React.Component {
                                 {this.state.isSearchClicked && <CountryModuleFromSearch onClose={this.handleSearchClick} onCountryAnimation={this.searchAnimation}
                                                                               countryModuleState={this.state.isSearchClicked} countryModuleClassName={this.state.countryModuleClassName}>
                                     <CountryDetailsFromSearch dataSearch={this.state.dataBySearch} countrySearch={this.state.countrySearch}/>
-                                    <OtherIndicatorsFromSearch dataSearch={this.state.dataBySearch} countrySearch={this.state.countrySearch} dataIP={this.state.dataByIP}/>
+                                    <OtherIndicatorsFromSearch dataSearch={this.state.dataBySearch} countrySearch={this.state.countrySearch} />
                                 </CountryModuleFromSearch>}
                             </>
                         }
