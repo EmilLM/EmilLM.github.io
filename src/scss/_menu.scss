@@ -32,7 +32,8 @@
     a{
       font-size: 2vh !important;
       text-decoration: none;
-      width: 4vw;
+      width: 8vh;
+      height: auto;
       margin: 5px 0 5px 0;
       text-align: center;
       @include buttonStyle();

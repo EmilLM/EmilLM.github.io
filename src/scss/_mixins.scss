@@ -5,8 +5,9 @@
 
 @mixin buttonStyle() {
   font-size: 2.5vh;
-  padding: 0.5vh 1vw;
-  border-radius: 10px;
+  height: auto;
+  padding: 3px 6px;
+  border-radius: 7px;
   background: cornflowerblue;
   color: white;
   border: 2px solid white;

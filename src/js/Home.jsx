@@ -17,7 +17,7 @@ import Modal from "./HeaderClasses/Modal.jsx";
 
 export default class Home extends React.Component {
     state = {
-      isModuleVisible: false,
+      isModuleVisible: true,
       className: 'ldt-zoom-in',
       isSearchClicked : false,
       countryModuleClassName: 'ldt-zoom-in',
@@ -28,7 +28,7 @@ export default class Home extends React.Component {
       countryCode: false,
       countryCodeSearch: false,
       ipCountry : false,
-      errorStatus: false,
+      errorStatus: true,
       modal: false,
       modalClass: 'ldt-zoom-in'
     };

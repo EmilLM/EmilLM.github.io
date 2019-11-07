@@ -58,9 +58,11 @@ export default class SearchModule extends React.Component {
                 {this.props.moduleState === true
                     ?
                     <article onAnimationEnd={this.handleAnimation} className={'search_module ' + this.props.onClass}>
-                        <div className="close-container" onClick={this.handleClick}>
-                            <div className="leftRight"> </div>
-                            <div className="rightLeft"> </div>
+                        <div id='close'>
+                            <div className="close-container" onClick={this.handleClick}>
+                                <div className="leftRight"> </div>
+                                <div className="rightLeft"> </div>
+                            </div>
                         </div>
 
                         <form  autoComplete="off" onSubmit={this.handleSubmit}>
@@ -71,15 +73,17 @@ export default class SearchModule extends React.Component {
                                 <span className="label">Country name</span>
                                 <span className="border"> </span>
                             </label>
+                            <div>
+                                <button type="submit" className={"btn search_button ld-ext-right "+ this.state.runningButton} onClick={this.handleRunning}>Search
+                                    <div className={"ld ld-ring ld-spin"}> </div>
+                                </button>
+                            </div>
 
-                            <button type="submit" className={"btn search_button ld-ext-right "+ this.state.runningButton} onClick={this.handleRunning}>Search
-                                <div className={"ld ld-ring ld-spin"}> </div>
-                            </button>
 
                         </form>
-                        <div>
-                            {this.props.onError && <div className="search_error">Invalid country name!</div>}
-                        </div>
+
+                        {this.props.onError && <div className="search_error">Invalid country name!</div>}
+
                     </article>
                     :
                     null}

@@ -6,6 +6,7 @@
 
 TD:
 0.RWD, mobile-first.
-1.SVG map
-2.API indicators.
+1. extend buttons with running the othery way;
+2. button styles
+
 3. Options menu: no animations, switch map/search mode;

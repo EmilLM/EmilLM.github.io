@@ -56,7 +56,7 @@ export default class CountryDetails extends React.Component {
                     </li>
                 </ul>
                 </>
-                    }
+                }
            </>
         )
     }
