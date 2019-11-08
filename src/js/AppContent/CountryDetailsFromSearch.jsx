@@ -25,7 +25,7 @@ export default class CountryDetailsFromSearch extends React.Component {
                             <li className='tooltip'>
                                 <img src={"../../assets/images/population.png"} alt={'population icon'} />
                                 <span className="pop_value"> <span>Pop. growth:</span>  {dataSearch[1][0].value}{dataSearch[1][0].value?'%':'N/A'}</span>
-                                <div className="right">
+                                <div className="top">
                                     <p className='tooltipText'>
                                         The annual population growth of residents of a country.
                                     </p>
@@ -35,7 +35,7 @@ export default class CountryDetailsFromSearch extends React.Component {
                             <li className='tooltip'>
                                 <img src={"../../assets/images/income.png"} alt={'income icon'} />
                                 <span className="income_value"> <span>GNI: </span> {dataSearch[1][3].value}{dataSearch[1][3].value?'.000$':'N/A'}</span>
-                                <div className="right">
+                                <div className="top">
                                     <p className='tooltipText'>
                                         <span>GNI per capita</span> is the total amount of money earned by a nation's citizens and businesses across the world,
                                         minus the income of non-citizens residents, converted to international dollars using PPP rates.
@@ -46,7 +46,7 @@ export default class CountryDetailsFromSearch extends React.Component {
                             <li className='tooltip'>
                                 <img src={"../../assets/images/gdp.png"} alt={'gdp icon'} />
                                 <span> <span>GDP:</span> {dataSearch[1][6].value} {dataSearch[1][6].value?'$':'N/A'} {dataSearch[1][6]?dataSearch[1][6].scale: ''}</span>
-                                <div className="right">
+                                <div className="top">
                                     <p  className='tooltipText'>
                                         Gross domestic products (GDP) is a monetary measure of the <span>market value</span> of all the final
                                         <span>goods and services produced in a year</span> in a country. Value is expressed in current $.

@@ -13,6 +13,10 @@
     font-weight: 500;
     transform-origin: 0 0;
     transition: all 0.2s ease;
+    @media screen and #{$desktop} {
+      font-size: 3.2vh;
+      top: -15px;
+    }
 
   }
   .border {
@@ -37,6 +41,7 @@
     max-width: 50vw;
     height: 20vh;
   }
+
   width: 90vw;
   max-width: 90vw;
   display: flex;
@@ -52,22 +57,40 @@
   border: 3px solid white;
   @include transition();
   .search_button {
+    @media screen and #{$tablet} {
+      bottom: 6vh;
+    }
+    @media screen and #{$desktop} {
+      bottom: 8vh;
+    }
     position: absolute;
     bottom: 3.7vh;
     right: 4vw;
   }
   form {
     .inp {
+      @media screen and #{$tablet} {
+        bottom: 6vh;
+      }
+      @media screen and #{$desktop} {
+        bottom: 8vh;
+      }
       position: absolute;
       bottom: 5vh;
       left: 4vw;
       width: 65%;
     }
     input {
+      @media screen and #{$tablet} {
+        font-size: 2.3vh;
+      }
+      @media screen and #{$desktop} {
+        font-size: 2.5vh;
+      }
       width: 100%;
       border: none;
       font-family: inherit;
-      padding: 12px 5px;
+      padding: 15px 5px;
       height: 3vh;
       font-size: 2vh;
       font-weight: 500;
@@ -96,6 +119,10 @@
     margin-left: 4vw;
     color: darkred;
     text-shadow: $textHover;
+    @media screen and #{$desktop} {
+      font-size: 2.5vh;
+      margin-bottom: 2vh;
+    }
   }
 }
 .inp input:focus + span {

@@ -3,13 +3,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .modal {
+  .gray_bg {
+    background-color: hsla(0, 0%, 0%, 0.5);
+    width: 100vw;
+    height: 120vh;
+    z-index: 1;
     position: absolute;
-    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .modal {
+    @media screen and #{$tablet} {
+      min-width: 70vw;
+    }
+    @media screen and #{$desktop} {
+      max-width: 50vw;
+    }
+    position: absolute;
+    width: 90vw;
+    max-width: 90vw;
     height: auto;
     background: $gradient1;
-    top: 50px;
+    top: 35px;
     border: 3px solid darkblue;
     box-shadow: $boxShadow;
     border-radius: 10px;
@@ -22,21 +38,18 @@
       text-align: center;
       background: darkblue;
       border: 3px solid cornflowerblue;
-      img {
-        width: 2vw;
-        height: auto;
-      }
+      height: 8vh;
     }
     main {
       background-image: url('/assets/images/modal_bg.gif');
       background-position: center;
-      //background-size: cover;
-      //overflow: hidden;
+      background-size: contain;
+      overflow: hidden;
       background-repeat: no-repeat;
       background-color: #066ACA;
       border: 3px solid white;
       border-radius: 10px;
-      height: 50vh;
+      height: auto;
       display: flex;
       justify-content: space-evenly;
       flex-direction: column;
@@ -49,9 +62,10 @@
           padding-left: 5vw;
           color: darkblue;
           margin: 15px 0 0 0;
+          font-size: 2vh;
         }
         p {
-          font-size: 1.3rem;
+          font-size: 1.5vh;
           padding: 0 1vw 0 1vw;
           margin: 2vh 0 0 0;
           text-indent: 2vw;
@@ -66,12 +80,13 @@
   padding: 0;
   ul {
     color: darkblue;
-    font-size: 2.5vh;
+    font-size: 2vh;
     list-style-type: square;
     line-height: 4.5vh;
+    margin: 0 0 1vh 0;
     li {
       color: $MainColor;
-      font-size: 1.8vh;
+      font-size: 1.5vh;
       line-height: 2.5vh;
       a {
         text-decoration: none;
@@ -93,9 +108,8 @@ footer {
   justify-content: space-evenly;
 
   #gh {
-    width: 6vw;
-    //border: 2px solid white;
-    //border-radius: 10px;
+    width: 3.5em;
+
     content: url('/assets/images/GitHub_logo.png');
 
     &:hover {
@@ -104,9 +118,7 @@ footer {
   }
 
   #lin {
-    width: 7.5vw;
-    //border: 2px solid white;
-    //border-radius: 10px;
+    width: 4em;
     content: url('/assets/images/linkedin_logo.png');
     padding: 6px;
     &:hover {

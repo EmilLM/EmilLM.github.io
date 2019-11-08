@@ -4,10 +4,16 @@
 }
 
 @mixin buttonStyle() {
-  font-size: 2.5vh;
+  @media screen and #{$tablet}{
+    font-size: 2.2vh;
+  }
+  @media screen and #{$desktop} {
+    font-size: 2.6vh;
+  }
+  font-size: 1.8vh;
   height: auto;
-  padding: 3px 6px;
-  border-radius: 7px;
+  padding: 5px 10px;
+  border-radius: 1vh;
   background: cornflowerblue;
   color: white;
   border: 2px solid white;

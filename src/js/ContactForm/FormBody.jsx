@@ -149,7 +149,7 @@ export default class FormBody extends React.Component {
                                 <div className={'inputGroup tooltip'}>
                                     <input type="checkbox" name='appName' value={this.state.appName} onChange={this.handleChange} id='appName' />
                                     <label htmlFor="appName">Name</label>
-                                    <div className="right">
+                                    <div className="top">
                                         <p className='tooltipText'>
                                             I know, it's bad. Could use some suggestions.
                                         </p>

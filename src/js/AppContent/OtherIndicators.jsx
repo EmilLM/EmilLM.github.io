@@ -13,7 +13,7 @@ export default class OtherIndicators extends React.Component {
                                         <div className="indicator_value">{dataCode[1][5].value}{dataCode[1][5].value?'%':'N/A'}</div>
                                         <div className="bottom">
                                             <p className='tooltipText'>
-                                                Percentage of the <span>labour force</span> population ages 15 and older that is <span>not in paid employment or self-employed</span>
+                                                Percentage of the <span>labour force</span> population ages 15 and older that is <span>not in paid employment or self-employed </span>
                                                 but is available for work and has taken steps to <span>seek employment.</span>
                                             </p>
                                             <i> </i>
@@ -49,7 +49,7 @@ export default class OtherIndicators extends React.Component {
                                         <div className="indicator_value">{dataCode[1][4].value}{dataCode[1][4].value?'%':'N/A'}</div>
                                         <div className="bottom">
                                             <p className='tooltipText'>
-                                                The percentage of population that routinely accesses the internet.
+                                                The % of population that routinely accesses the internet.
                                             </p>
                                             <i> </i>
                                         </div>
