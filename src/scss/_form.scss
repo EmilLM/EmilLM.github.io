@@ -9,48 +9,63 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 90%;
-  height: 100%;
+  width: 95%;
+  height: 40vh;
   margin: 10px auto;
   position: relative;
   flex-wrap: wrap;
 
   .btn {
     position: absolute;
-    bottom: 25px;
-    right: 17.5vw;
+    bottom: 8px;
+    right: 35%;
+    @media screen and #{$tablet} {
+      bottom: 10px;
+      right: 40%;
+    }
+    @media screen and #{$desktop} {
+      right: 45%;
+      bottom: 0;
+    }
   }
 }
 .contact_form {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 35vh;
+  //justify-content: space-evenly;
+  height: 70%;
   width: 55%;
 }
 .inputs {
   display: flex;
   flex-direction: column;
   align-content: space-between;
-  height: 15vh;
+  margin-bottom: 2.5vh;
 }
 .input-container {
   display: flex;
   margin: 10px 0 0 0;
   height: 4vh;
-  width: 23vw;
-  border: 3px solid cornflowerblue;
-  border-radius: 5px;
+  width: 90%;
+  border: 2px solid cornflowerblue;
   position: relative;
   input {
-    width: 20vw;
+    @media screen and #{$tablet} {
+      font-size: 2.2vh;
+      padding-left: 9%;
+    }
+    @media screen and #{$desktop} {
+      font-size: 2.5vh;
+      padding-left: 6%;
+    }
+    width: 100%;
     outline: none;
     font-size: 2vh;
-    padding-left: 1.6vw;
+    padding-left: 12%;
     color: darkblue;
     box-shadow: $smallerInnerShadow;
     &:focus {
-      border: 3px solid darkblue;
+      border: 2px solid darkblue;
     }
   }
   input::placeholder {
@@ -61,204 +76,113 @@ header {
     padding: 3px;
     background: darkblue;
     color: white;
-    width: 3vw;
+    width: 5vw;
     text-align: center;
-    font-size: 3vh;
+    font-size: 2vh;
+    line-height: 3vh;
+    @media screen and #{$tablet} {
+      font-size: 2.2vh;
+    }
+    @media screen and #{$desktop} {
+      font-size: 2.5vh;
+      width: 2.5vw;
+    }
+
   }
   .check_icon {
     position: absolute;
-    bottom: 5px;
-    left: 3.7vw;
+    bottom: 20%;
+    left: 17%;
     color: cornflowerblue;
-    font-size: 2.5vh;
+    font-size: 2vh;
+    @media screen and #{$tablet} {
+      left: 14%;
+      font-size: 2.2vh;
+    }
+    @media screen and #{$desktop} {
+      left: 12%;
+      font-size: 2.5vh;
+    }
+
   }
   .pass_icon {
     position: absolute;
-    bottom: 5px;
-    right: 1.7vw;
+    bottom: 20%;
+    right: 13%;
     color: cornflowerblue;
     width: 0.1vw;
     height: auto;
-    font-size: 2.5vh;
+    font-size: 2vh;
+    @media screen and #{$tablet} {
+      font-size: 2.2vh;
+      right: 10%;
+    }
+    @media screen and #{$desktop} {
+      font-size: 2.5vh;
+      right: 8%;
+    }
     &:active {
       color: #000066;
     }
   }
 }
-.area_box {
-  height: 4.3vh;
-}
-textarea {
-  resize: none;
-  width: 23.5vw;
-  font-size: 2vh;
-  border: 3px solid cornflowerblue;
-  transition: all 0.5s ease-in-out;
-  padding: 0.35vw;
-  height: 4.5vh;
-  color: darkblue;
-  box-shadow: $smallerInnerShadow;
-  border-radius: 5px;
-
-  &:focus {
-    border: 3px solid darkblue;
-    font-size: 2vh;
-    height: 10vh;
-  }
-  &::placeholder{
-    opacity: 0.5;
-    color: #066ACA;
-  }
-}
-
-//Radio+checks
-.survey_form {
-  width: 40%;
-  .checks {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    p {
-     margin: 0;
-      font-size: 2.5vh;
-    }
-    //#contactForm > main > section > div > main > form > div.survey_form > div > div.survey_checkbox > p {
-    //  margin-bottom: 10px;
-    //}
-  }
-}
-.survey_checkbox {
-  .tooltip {
-    margin-top: 0;
-  }
-}
-.inputGroup {
-  background-color: white;
-  margin: 10px 0;
-  position: relative;
-  width: 100%;
-  border: 3px solid cornflowerblue;
-  border-radius: 5px;
-  box-shadow: $smallerInnerShadow;
-  .right {
-    width: 16.5vw;
-    p {
-      font-size: 1.4vh;
-      text-align: left;
-    }
-  }
-  input {
-    width: 100%;
-    height: 3vh;
-    padding-left: 10px;
-    order: 1;
-    z-index: 2;
-    position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    visibility: hidden;
-
-    //  TO hide checks/radio default buttons
-  }
-  label {
-    font-size: 2vh;
-    text-indent: 1.5vw;
-    padding: 8px 0;
-    width: 100%;
-    display: block;
-    text-align: justify;
-    color: darkblue;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-    transition: color 0.5s ease-in;
-    overflow: hidden;
-    //this before adds the checkbox
-    &:before {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      content: '';
-      background-color: darkblue;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%) scale3d(1, 1, 1);
-      transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
-      opacity: 0;
-      z-index: -1;
-    }
-    //this after add bg color
-    &:after {
-      width: 30px;
-      height: 30px;
-      content: '';
-      border: 2px solid cornflowerblue;
-      background-color: #fff;
-      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
-      background-repeat: no-repeat;
-      background-position: 2px 3px;
-      border-radius: 50%;
-      z-index: 2;
-      position: absolute;
-      right: 30px;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-      transition: all 0.5s ease-in;
-    }
-  }
-
-  input:checked ~ label {
-    color: #fff;
-    //this before makes visible the label;
-    &:before {
-      transform: translate(-50%, -50%) scale3d(56, 56, 1);
-      opacity: 1;
-    }
-    //this after adds the checkmark
-    &:after {
-      background-color: cornflowerblue;
-      border: 2px solid white;
-    }
-  }
-
-}
 
 //Select styles
 .select_form{
-  width: 23vw;
+  width: 90%;
   padding: 0;
   display: flex;
+  margin-bottom: 2.2vh;
+  @media screen and #{$tablet} {
+    margin-bottom: 1.8vh;
+  }
+  @media screen and #{$desktop} {
+    margin-bottom: 2vh;
+  }
   .subject_box {
     position: relative;
-    width: 11.5vw;
-    border-right: 2px solid white;
+    width: 50%;
+    border-right: 1px solid white;
+    @media screen and #{$desktop} {
+      border-right: 2px solid white;
+    }
   }
   .countries_box{
     position: relative;
-    width: 11.5vw;
-    border-left: 2px solid white;
+    width: 50%;
+    border-left: 1px solid white;
+    @media screen and #{$desktop} {
+      border-left: 2px solid white;
+    }
   }
   select {
-    width: 11.5vw;
-    height: 3.5vh;
+    width: 100%;
+    height: 3vh;
     background-color: darkblue;
-    font-size: 2vh;
+    font-size: 1.4vh;
     color: white;
     border: none;
     -webkit-appearance: button;
     outline: none;
-    text-indent: 10px;
+    text-indent: 2px;
+    @media screen and #{$tablet} {
+      font-size: 1.8vh;
+      text-indent: 5px;
+    }
+    @media screen and #{$desktop} {
+      font-size: 2vh;
+      text-indent: 10px;
+    }
     &:focus {
       background: cornflowerblue;
     }
     option {
       background: #066ACA;
       color: darkblue;
+      //height: 0.2vh;
       font-size: 1.5vh;
+      padding: 0;
+      margin: 0;
     }
     option[disabled] {
       background-color: white;
@@ -274,10 +198,17 @@ textarea {
     width: 20%;
     height: 100%;
     text-align: center;
-    line-height: 120%;
+    line-height: 140%;
     color: white;
     background-color: cornflowerblue;
     pointer-events: none;
+    @media screen and #{$tablet} {
+      font-size: 2.2vh;
+    }
+    @media screen and #{$desktop} {
+      font-size: 2.5vh;
+      line-height: 120%;
+    }
   }
   .subject_box:hover::before {
     background: darkblue;
@@ -295,10 +226,17 @@ textarea {
     width: 20%;
     height: 100%;
     text-align: center;
-    line-height: 3.6vh;
+    line-height: 140%;
     color: white;
     background-color: cornflowerblue;
     pointer-events: none;
+    @media screen and #{$tablet} {
+      font-size: 2.2vh;
+    }
+    @media screen and #{$desktop} {
+      font-size: 2.5vh;
+      line-height: 120%;
+    }
   }
   .countries_box:hover::before {
     background: darkblue;
@@ -307,6 +245,193 @@ textarea {
     background: cornflowerblue;
   }
 }
+
+//textarea style
+.area_box {
+  height: 4.3vh;
+}
+textarea {
+  resize: none;
+  width: 90%;
+  font-size: 2vh;
+  padding: 5px 10px;
+  border: 2px solid cornflowerblue;
+  transition: all 0.5s ease-in-out;
+  height: 4.5vh;
+  color: darkblue;
+  box-shadow: $smallerInnerShadow;
+  border-radius: 5px;
+
+  &:focus {
+    border: 3px solid darkblue;
+    font-size: 2vh;
+    height: 8.5vh;
+    outline: none;
+    @media screen and #{$desktop} {
+      height: 10vh;
+    }
+  }
+  &::placeholder{
+    opacity: 0.5;
+    color: #066ACA;
+  }
+}
+
+//Radio+checks
+.survey_form {
+  width: 40%;
+  .checks {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5vh;
+    @media screen and #{$desktop} {
+      margin-top: 0;
+    }
+    p {
+      margin: 0;
+      font-size: 2vh;
+      text-align: left;
+      @media screen and #{$desktop} {
+        font-size: 2.5vh;
+      }
+    }
+  }
+}
+.survey_checkbox {
+  margin-top: 2vh;
+  @media screen and #{$desktop} {
+    margin-top: 0;
+  }
+  .tooltip {
+    margin-top: 0;
+  }
+}
+.inputGroup {
+  background-color: white;
+  margin: 10px 0;
+  position: relative;
+  width: 100%;
+  height: 3vh;
+  border: 2px solid cornflowerblue;
+  box-shadow: $smallerInnerShadow;
+  @media screen and #{$desktop} {
+    height: 4vh;
+  }
+  .top {
+    width: 150px;
+    p {
+      font-size: 1.4vh;
+      text-align: left;
+      z-index:9999;
+    }
+  }
+  input {
+    @media screen and #{$desktop} {
+      height: 4vh;
+    }
+    width: 100%;
+    height: 2.5vh;
+    padding-left: 10px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+
+    //  TO hide checks/radio default buttons
+  }
+  label {
+    @media screen and #{$desktop} {
+      height: 4vh;
+      padding: 0;
+      line-height: 4vh;
+      font-weight: bold;
+    }
+    font-size: 1.7vh;
+    text-indent: 1.5vw;
+    padding: 2px 0;
+    line-height: 2.7vh;
+    width: 100%;
+    height: 2.5vh;
+    display: block;
+    text-align: justify;
+    color: darkblue;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s ease-in;
+    overflow: hidden;
+    //this before adds the checkbox + bg color when checked
+    &:before {
+      @media screen and #{$desktop} {
+        font-size: 2.5vh;
+      }
+      width: 10px;
+      height: 10px;
+      content: '';
+      background-color: darkblue;
+      position: absolute;
+      font-size: 2vh;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale3d(1, 1, 1);
+      transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+      opacity: 0;
+      z-index: -1;
+    }
+    //this after add bg color + check image
+    &:after {
+      @media screen and #{$tablet} {
+        width: 23px;
+        height: 23px;
+        background-position: -1px 1px;
+      }
+      @media screen and #{$desktop} {
+        width: 30px;
+        height: 30px;
+        background-position: -2px -2px;
+        background-size: 45px 45px;
+        right: 35px;
+        top: 50%;
+      }
+      width: 17px;
+      height: 17px;
+      content: '';
+      border: 2px solid cornflowerblue;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+      background-repeat: no-repeat;
+      background-position: -4px -4px;
+      border-radius: 50%;
+      z-index: 2;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: all 0.5s ease-in;
+    }
+  }
+
+  input:checked ~ label {
+    color: #fff;
+    //this before makes visible the label;
+    &:before {
+      transform: translate(-50%, -50%) scale3d(56, 56, 1);
+      opacity: 1;
+    }
+    //checkmark style when checked
+    &:after {
+      background-color: cornflowerblue;
+      border: 2px solid white;
+    }
+  }
+
+}
+
 //Submit style
 .main_form {
   .btn:link,
@@ -362,5 +487,21 @@ textarea {
       opacity:1;
       transform:translateY(0);
     }
+  }
+}
+#main_postSubmit {
+  height: 40vh;
+  font-size: 2vh;
+  @media screen and #{$tablet} {
+    height: 40vh;
+    font-size: 2.5vh;
+  }
+  @media screen and #{$desktop} {
+    height: 50vh;
+    font-size: 3vh;
+  }
+  h3 {
+    text-align: center;
+
   }
 }

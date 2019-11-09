@@ -18,7 +18,8 @@
       min-width: 70vw;
     }
     @media screen and #{$desktop} {
-      max-width: 50vw;
+      width: 50vw;
+      max-width: 80vw;
     }
     position: absolute;
     width: 90vw;
@@ -34,13 +35,26 @@
     flex-direction: column;
 
     header {
+      font-family: RussoOne, sans-serif;
       border-radius: 10px;
       text-align: center;
       background: darkblue;
       border: 3px solid cornflowerblue;
       height: 8vh;
+      display: flex;
+      //justify-content: center;
+      align-items: center;
+      @media screen and #{$tablet} {
+        font-size: 2.5vh;
+      }
+      @media screen and #{$desktop} {
+        font-size: 3vh;
+      }
     }
     main {
+      @media screen and #{$desktop} {
+        height: 50vh;
+      }
       background-image: url('/assets/images/modal_bg.gif');
       background-position: center;
       background-size: contain;
@@ -54,21 +68,30 @@
       justify-content: space-evenly;
       flex-direction: column;
       box-shadow: $innerShadow;
-      h3 {
-        text-align: center;
-      }
       article {
         h5 {
           padding-left: 5vw;
           color: darkblue;
           margin: 15px 0 0 0;
           font-size: 2vh;
+          @media screen and #{$tablet} {
+            font-size: 2.5vh;
+          }
+          @media screen and #{$desktop} {
+            font-size: 3vh;
+          }
         }
         p {
           font-size: 1.5vh;
           padding: 0 1vw 0 1vw;
           margin: 2vh 0 0 0;
           text-indent: 2vw;
+          @media screen and #{$tablet} {
+            font-size: 1.7vh;
+          }
+          @media screen and #{$desktop} {
+            font-size: 2vh;
+          }
         }
       }
     }
@@ -108,17 +131,27 @@ footer {
   justify-content: space-evenly;
 
   #gh {
+    @media screen and #{$tablet} {
+      width: 5.5em;
+    }
+    @media screen and #{$desktop} {
+      width: 8em;
+    }
     width: 3.5em;
-
     content: url('/assets/images/GitHub_logo.png');
-
     &:hover {
       content: url('/assets/images/GitHub_hover.png');
     }
   }
 
   #lin {
-    width: 4em;
+    @media screen and #{$tablet} {
+      width: 7em;
+    }
+    @media screen and #{$desktop} {
+      width: 9em;
+    }
+    width: 4.5em;
     content: url('/assets/images/linkedin_logo.png');
     padding: 6px;
     &:hover {

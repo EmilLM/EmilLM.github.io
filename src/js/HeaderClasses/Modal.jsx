@@ -16,7 +16,7 @@ export default class Modal extends React.Component {
             <div className='gray_bg'>
                 <div className={'modal ' + this.props.onClass} onAnimationEnd={this.handleAnimation}>
                     <header className='modal_header ldt-slide-top-in'>
-                        <h3 className='ldt-slide-bottom-in'>Welcome to CountryInfo!</h3>
+                        <h3 className='ldt-slide-bottom-in'>CountryINFO!</h3>
                         <div className='close-container' onClick={this.handleClick}>
                             <div className="leftRight"> </div>
                             <div className="rightLeft"> </div>
@@ -51,7 +51,7 @@ export default class Modal extends React.Component {
                                 </ul>
                                 <ul> Assets:
                                     <li><a href='https://loading.io/'>Loading.io</a></li>
-                                    <li><a href='https://pixabay.com/'>Pixabay</a></li>
+                                    <li><a href='https://freefrontend.com/'>Free Frontend</a></li>
                                     <li><a href='https://fontawesome.com/'>Font Awesome</a></li>
                                 </ul>
                             </div>

@@ -71,7 +71,7 @@ export default class FormBody extends React.Component {
     render () {
         let {allCountries} = this.state;
         return (
-            <main className='ldt-fade-in'>
+            <main className='ldt-fade-in form_body'>
                 <form className={'main_form'} onSubmit={this.handleSubmit}>
                     <div className={'contact_form'}>
                         <div className={'inputs'}>
@@ -125,7 +125,7 @@ export default class FormBody extends React.Component {
                         {/*Radio*/}
                         <div className={'checks'}>
                             <div className={'survey_radio'}>
-                                <p>Opinion about CountryInfo:</p>
+                                <p>CountryINFO:</p>
                                 <div className={'inputGroup'}>
                                     <input type="radio" name='opinion' id='like' value='like' checked={this.state.pickedOption === 'like'} onChange={this.handleRadios}/>
                                     <label htmlFor="like">Looks good!</label>
@@ -147,7 +147,7 @@ export default class FormBody extends React.Component {
                                     <label htmlFor="function">Functionality</label>
                                 </div>
                                 <div className={'inputGroup tooltip'}>
-                                    <input type="checkbox" name='appName' value={this.state.appName} onChange={this.handleChange} id='appName' />
+                                    <input type="checkbox" name='appName' value={this.state.appName} onChange={this.handleChange} id='appName'  checked/>
                                     <label htmlFor="appName">Name</label>
                                     <div className="top">
                                         <p className='tooltipText'>

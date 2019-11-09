@@ -1,12 +1,13 @@
-
-
-3. Select dropdown cant be styled.
-
+Issues
+Select dropdown cant be styled.
+extend buttons with running the othery way;
 
 
 TD:
-black background when modal pops up
-0.RWD, mobile-first.
-1. extend buttons with running the othery way;
-2. button styles
-3. Options menu: no animations, switch map/search mode;
+button styles + icons
+ Options menu: no animations, switch map/search mode;
+
+ add dif bg image based on size;
+ anim icons in form
+ rotate arrows on select
+ submit ty stuff
