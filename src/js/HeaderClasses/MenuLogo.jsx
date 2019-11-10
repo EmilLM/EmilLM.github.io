@@ -25,7 +25,7 @@ export default class MenuLogo extends React.Component {
                 </div>
                 <div className={'dropdown flip-box'}>
                     <div className={'flip-box-inner'}>
-                        <button className="btn flip-box-front">Menu</button>
+                        <button className="btn flip-box-front">wtf</button>
                         <ul className="dropdown-content menu_list flip-box-back">
                             <li className={'ldt-slide-bottom-in'}><NavLink to="/" activeStyle={activeStyle} exact >Home</NavLink></li>
                             <li><a onClick={this.handleClick} >About</a></li>
