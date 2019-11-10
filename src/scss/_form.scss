@@ -14,7 +14,6 @@ header {
   margin: 10px auto;
   position: relative;
   flex-wrap: wrap;
-
   .btn {
     position: absolute;
     bottom: 8px;
@@ -49,6 +48,9 @@ header {
   width: 90%;
   border: 2px solid cornflowerblue;
   position: relative;
+  @media screen and (min-height: 1300px) {
+    height: 3vh;
+  }
   input {
     @media screen and #{$tablet} {
       font-size: 2.2vh;
@@ -57,12 +59,11 @@ header {
     @media screen and #{$desktop} {
       font-size: 2.5vh;
       padding-left: 6%;
-      @media screen and (min-height: 1250px) {
+      @media screen and (min-height: 1300px) {
         padding-left: 10%;
+        font-size: 2.2vh;
       }
-
     }
-
     width: 100%;
     outline: none;
     font-size: 2vh;
@@ -91,7 +92,7 @@ header {
     @media screen and #{$desktop} {
       font-size: 2.5vh;
       width: 2.5vw;
-      @media screen and (min-height: 1250px) {
+      @media screen and (min-height: 1300px) {
         width: 6.5vw;
       }
     }
@@ -110,8 +111,9 @@ header {
     @media screen and #{$desktop} {
       left: 12%;
       font-size: 2.5vh;
-      @media screen and (min-height: 1250px) {
-        left: 16%
+      @media screen and (min-height: 1300px) {
+        left: 16%;
+        bottom: 13%;
       }
     }
 
@@ -131,8 +133,9 @@ header {
     @media screen and #{$desktop} {
       font-size: 2.5vh;
       right: 8%;
-      @media screen and (min-height: 1250px) {
-        right: 12%;
+      @media screen and (min-height: 1300px) {
+        right: 11%;
+        bottom: 17%;
       }
     }
     &:active {
@@ -300,8 +303,11 @@ textarea {
   &:focus {
     border: 3px solid darkblue;
     font-size: 2vh;
-    height: 8.5vh;
+    height: 7vh;
     outline: none;
+    @media screen and #{$tablet} {
+      height: 8.3vh;
+    }
     @media screen and #{$desktop} {
       height: 10vh;
     }
@@ -343,7 +349,7 @@ textarea {
 }
 .inputGroup {
   background-color: white;
-  margin: 10px 0;
+  margin: 1vh 0;
   position: relative;
   width: 100%;
   height: 3vh;
@@ -351,6 +357,9 @@ textarea {
   box-shadow: $smallerInnerShadow;
   @media screen and #{$desktop} {
     height: 4vh;
+    @media screen and (min-height: 1300px) {
+      height: 3vh;
+    }
   }
   .top {
     width: 150px;
@@ -363,6 +372,9 @@ textarea {
   input {
     @media screen and #{$desktop} {
       height: 4vh;
+      @media screen and (min-height: 1300px) {
+        height: 3vh;
+      }
     }
     width: 100%;
     height: 2.5vh;
@@ -384,6 +396,10 @@ textarea {
       padding: 0;
       line-height: 4vh;
       font-weight: bold;
+      @media screen and (min-height: 1300px) {
+        height: 3vh;
+        line-height: 3vh;
+      }
     }
     font-size: 1.7vh;
     text-indent: 1.5vw;
@@ -527,6 +543,7 @@ textarea {
 #main_postSubmit {
   height: 40vh;
   font-size: 2vh;
+  max-height: 250px;
   @media screen and #{$tablet} {
     height: 40vh;
     font-size: 2.5vh;
@@ -534,6 +551,11 @@ textarea {
   @media screen and #{$desktop} {
     height: 50vh;
     font-size: 3vh;
+    @media screen and (min-height: 1300px) {
+      font-size: 2vh;
+      height: 40vh;
+      max-height: 450px;
+    }
   }
   h3 {
     text-align: center;

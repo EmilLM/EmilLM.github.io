@@ -16,6 +16,9 @@ body {
   border-bottom: 3px solid white;
   @media screen and #{$desktop} {
     height: 15%;
+    @media screen and (min-height: 1300px) {
+      height: 13%;
+    }
   }
 }
 .container {
@@ -43,7 +46,10 @@ body {
   }
   @media screen and #{$desktop} {
    width: 9rem;
-    margin-right: 3vw;
+   margin-right: 3vw;
+    @media screen and (min-height: 1300px) {
+      width: 10rem;
+    }
   }
 }
 
@@ -86,9 +92,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  min-width: 350px;
   @media screen and #{$tablet} {
     width: 70vw;
-    height: 15vh;
     min-width: 650px;
   }
   @media screen and #{$desktop} {
@@ -176,7 +182,7 @@ body {
   @media screen and #{$tablet} {
     width: 70vw;
     height: 30vh;
-    max-width: 650px;
+    min-width: 650px;
   }
 
   min-width: 350px;
