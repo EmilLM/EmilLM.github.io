@@ -44,7 +44,7 @@ export default class CountryDetailsFromSearch extends React.Component {
                                 </div>
                             </li>
                             <li className='tooltip'>
-                                <img src={"../../assets/images/gdp.png"} alt={'gdp icon'} />
+                                <img src={"../../assets/images/GDP.png"} alt={'gdp icon'} />
                                 <span> <span>GDP:</span> {dataSearch[1][6].value} {dataSearch[1][6].value?'$':'N/A'} {dataSearch[1][6]?dataSearch[1][6].scale: ''}</span>
                                 <div className="top">
                                     <p  className='tooltipText'>

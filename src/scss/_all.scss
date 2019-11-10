@@ -163,6 +163,7 @@ body {
 }
 
 //Country module
+//for desktop version check end
 
 .country_module {
   @media screen and #{$tablet} {
@@ -319,7 +320,7 @@ body {
   }
 
 }
-
+//ALl styles again for destkop, copied from earlier version
 @media screen and #{$desktop} {
   .country_module {
     background: $gradient1;
@@ -397,7 +398,7 @@ body {
     font-size: 2.5vh;
     li {
       img {
-        width: 1.3vw;
+        width: 3vh;
         height: auto;
         border-radius: 2vh;
         &:hover {

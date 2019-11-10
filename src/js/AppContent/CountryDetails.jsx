@@ -44,7 +44,7 @@ export default class CountryDetails extends React.Component {
                         </div>
                     </li>
                     <li className='tooltip'>
-                        <img src={"../../assets/images/gdp.png"} alt={'gdp icon'} />
+                        <img src={"../../assets/images/GDP.png"} alt={'gdp icon'} />
                         <span className='value'> <span>GDP:</span> {dataCode[1][6].value}{dataCode[1][6].value?'$':'N/A'}  {dataCode[1][6].value?dataCode[1][6].scale:''}</span>
                         <div className="right top">
                             <p  className='tooltipText'>
