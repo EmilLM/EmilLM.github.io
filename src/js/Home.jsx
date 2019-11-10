@@ -131,7 +131,7 @@ export default class Home extends React.Component {
     };
     componentDidMount() {
         //Fetch country from IP API
-        fetch(`http://ip-api.com/json/`,
+        fetch(`https://ip-api.com/json/`,
             {
                 method: 'GET',
             }).then( ipResp => {
