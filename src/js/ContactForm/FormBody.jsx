@@ -100,7 +100,7 @@ export default class FormBody extends React.Component {
                         <div className={'select_form' }>
                             <div className={'subject_box'}>
                                 <select required name='subject' value={this.state.subject} onChange={this.handleSubject} >
-                                    <option value="" disabled >Select subject</option>
+                                    <option value="" disabled >Subject</option>
                                     <option value='feedback'>Feedback</option>
                                     <option value='question'>Question</option>
                                     <option value='message'>Message</option>
@@ -108,7 +108,7 @@ export default class FormBody extends React.Component {
                             </div>
                             <div className={'countries_box'}>
                                 <select name='countries' value={this.state.countries} onChange={this.handleCountries}>
-                                    <option value={""} disabled>Select country</option>
+                                    <option value={""} disabled>Country</option>
                                     {allCountries === false
                                         ?
                                         <option value='loading' disabled>Loading</option>
@@ -132,7 +132,7 @@ export default class FormBody extends React.Component {
                                  </div>
                                 <div className={'inputGroup'}>
                                     <input type="radio" name='opinion' id='dislike' value='dislike' checked={this.state.pickedOption === 'dislike'} onChange={this.handleRadios}/>
-                                    <label htmlFor="dislike">Could be better!</label>
+                                    <label htmlFor="dislike">Not great!</label>
                                 </div>
                             </div>
                             {/*Checkboxes*/}

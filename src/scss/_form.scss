@@ -57,7 +57,12 @@ header {
     @media screen and #{$desktop} {
       font-size: 2.5vh;
       padding-left: 6%;
+      @media screen and (min-height: 1250px) {
+        padding-left: 10%;
+      }
+
     }
+
     width: 100%;
     outline: none;
     font-size: 2vh;
@@ -86,6 +91,9 @@ header {
     @media screen and #{$desktop} {
       font-size: 2.5vh;
       width: 2.5vw;
+      @media screen and (min-height: 1250px) {
+        width: 6.5vw;
+      }
     }
 
   }
@@ -102,6 +110,9 @@ header {
     @media screen and #{$desktop} {
       left: 12%;
       font-size: 2.5vh;
+      @media screen and (min-height: 1250px) {
+        left: 16%
+      }
     }
 
   }
@@ -120,6 +131,9 @@ header {
     @media screen and #{$desktop} {
       font-size: 2.5vh;
       right: 8%;
+      @media screen and (min-height: 1250px) {
+        right: 12%;
+      }
     }
     &:active {
       color: #000066;
@@ -138,6 +152,7 @@ header {
   }
   @media screen and #{$desktop} {
     margin-bottom: 2vh;
+
   }
   .subject_box {
     position: relative;
@@ -163,20 +178,22 @@ header {
     width: 100%;
     height: 3vh;
     background-color: darkblue;
-    font-size: 1.4vh;
+    font-size: 1.6vh;
     color: white;
     border: none;
     -webkit-appearance: button;
     outline: none;
-    text-indent: 2px;
+    text-indent: 10px;
     overflow: hidden;
     @media screen and #{$tablet} {
       font-size: 1.8vh;
-      text-indent: 5px;
     }
     @media screen and #{$desktop} {
       font-size: 2vh;
       text-indent: 10px;
+      @media screen and (min-height: 1250px) {
+        font-size: 1.8vh;
+      }
     }
     //&:focus {
     //  background: cornflowerblue;
@@ -185,7 +202,13 @@ header {
       background: #066ACA;
       color: darkblue;
       //height: 0.2vh;
-      font-size: 1.5vh;
+      font-size: 1.2vh;
+      @media screen and #{$tablet} {
+        font-size: 1vh;
+      }
+      @media screen and (min-height: 1250px) {
+        font-size: 1vh;
+      }
       padding: 0;
       margin: 0;
       width: 3vw;
@@ -195,6 +218,7 @@ header {
     }
     option[disabled] {
       background-color: white;
+
 
     }
   }

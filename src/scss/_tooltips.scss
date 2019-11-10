@@ -11,7 +11,7 @@
   }
 }
 .tooltip .top {
-  width:200px;
+  width:190px;
   height: auto;
   top:-12px;
   left:40%;
@@ -27,7 +27,7 @@
   box-shadow: $boxShadow;
   visibility:hidden; opacity:0;
   transition:opacity 0.8s;
-  z-index:9999;
+  z-index:99;
 }
 
 .tooltip:hover .top {
@@ -65,7 +65,7 @@
     top: 150%;
     left: 50%;
   }
-  width: 110px;
+  width: 100px;
   height: auto;
   top: 100%;
   left:50%;
@@ -75,7 +75,7 @@
   font-size: 1.6vh;
   border-radius:8px;
   position:absolute;
-  z-index:9999;
+  z-index: 9999;
   border:1px solid #000066;
   background-color:#6666CC;
   box-shadow: $boxShadow;
@@ -96,7 +96,7 @@
   width:24px;
   height:12px;
   overflow:hidden;
-
+  z-index: 9999;
 }
 
 .tooltip .bottom i::after {
@@ -108,7 +108,7 @@
   transform:translate(-50%,50%) rotate(45deg);
   background-color:#6666CC;
   border:1px solid #000066;
-
+  z-index: 9999;
 }
 
 

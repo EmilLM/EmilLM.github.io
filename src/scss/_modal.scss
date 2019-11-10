@@ -15,15 +15,17 @@
   }
   .modal {
     @media screen and #{$tablet} {
-      min-width: 70vw;
+      width: 70vw;
+      min-width: 650px;
     }
     @media screen and #{$desktop} {
       width: 50vw;
-      max-width: 80vw;
+      min-width: 950px;
     }
     position: absolute;
     width: 90vw;
     max-width: 90vw;
+    min-width: 350px;
     height: auto;
     background: $gradient1;
     top: 35px;
@@ -44,6 +46,11 @@
       display: flex;
       //justify-content: center;
       align-items: center;
+      @media screen and #{$mobile} {
+        @media screen and (min-height: 800px) {
+          height: 5vh;
+        }
+      }
       @media screen and #{$tablet} {
         font-size: 2.5vh;
       }
@@ -84,8 +91,9 @@
         p {
           font-size: 1.5vh;
           padding: 0 1vw 0 1vw;
-          margin: 2vh 0 0 0;
+          margin: 1.5vh 0 0 0;
           text-indent: 2vw;
+
           @media screen and #{$tablet} {
             font-size: 1.7vh;
           }
@@ -106,7 +114,11 @@
     font-size: 2vh;
     list-style-type: square;
     line-height: 4.5vh;
-    margin: 0 0 1vh 0;
+    margin: 0 0 5px -20px;
+    @media screen and (min-height: 800px) {
+        margin: 0 0 5px -27px;
+
+    }
     li {
       color: $MainColor;
       font-size: 1.5vh;
@@ -129,6 +141,12 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  @media screen and #{$mobile} {
+    @media screen and (min-height: 800px) {
+      height: 5vh;
+    }
+  }
+
 
   #gh {
     @media screen and #{$tablet} {

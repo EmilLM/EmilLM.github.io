@@ -18,7 +18,7 @@
     }
     @media screen and #{$desktop} {
       font-size: 3.5vh;
-      top: 2px;
+      top: -29%;
     }
 
   }
@@ -37,16 +37,18 @@
 
 .search_module {
   @media screen and #{$tablet} {
-    min-width: 70vw;
+    width: 70vw;
     height: 15vh;
+    min-width: 650px;
   }
   @media screen and #{$desktop} {
-    max-width: 50vw;
+    width: 50vw;
+    min-width: 950px;
     height: 20vh;
+    max-height: 200px;
   }
-
   width: 90vw;
-  max-width: 90vw;
+  min-width: 350px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column-reverse;
@@ -60,26 +62,26 @@
   border: 3px solid white;
   @include transition();
   .search_button {
-    @media screen and #{$tablet} {
-      bottom: 6vh;
-    }
-    @media screen and #{$desktop} {
-      bottom: 8vh;
-    }
+    //@media screen and #{$tablet} {
+    //  bottom: 50%;
+    //}
+    //@media screen and #{$desktop} {
+    //  bottom: 50%;
+    //}
     position: absolute;
-    bottom: 3.7vh;
+    bottom: 40%;
     right: 4vw;
   }
   form {
     .inp {
-      @media screen and #{$tablet} {
-        bottom: 6vh;
-      }
-      @media screen and #{$desktop} {
-        bottom: 8vh;
-      }
+      //@media screen and #{$tablet} {
+      //  bottom: 50%;
+      //}
+      //@media screen and #{$desktop} {
+      //  bottom: 8vh;
+      //}
       position: absolute;
-      bottom: 5vh;
+      bottom: 40%;
       left: 4vw;
       width: 65%;
     }
@@ -93,9 +95,9 @@
       width: 100%;
       border: none;
       font-family: inherit;
-      padding: 25px 5px 10px 5px;
+      padding: 1% 2% 1% 2%;
       height: 3vh;
-      font-size: 2vh;
+      font-size: 1.7vh;
       font-weight: 500;
       border-bottom: 2px solid white;
       background: none;
