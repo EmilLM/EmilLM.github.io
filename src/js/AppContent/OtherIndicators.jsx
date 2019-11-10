@@ -34,7 +34,7 @@ export default class OtherIndicators extends React.Component {
                                     <li className={'ldt-slide-top-in tooltip'}>
                                         <div className="indicator_name">GINI</div>
                                         <div className="indicator_icon"><img src={"../../assets/images/animIcons/GINI.svg"} alt={'GINI icon'} /></div>
-                                        <div className="indicator_value">{dataIP?dataIP[0].gini:''}</div>
+                                        <div className="indicator_value">{dataIP?dataIP[0].gini:''}{dataIP[0].gini?'':'N/A'}</div>
                                         <div className="bottom">
                                             <p className='tooltipText'>
                                                 Measure of the <span>deviation</span> of the distribution of income among individuals or households within a country

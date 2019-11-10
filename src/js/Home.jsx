@@ -112,10 +112,9 @@ export default class Home extends React.Component {
                 },() => {
                     let {countryCodeSearch} =this.state;
                     fetch(`https://api.worldbank.org/v2/en/country/` + countryCodeSearch +
-                        `/indicator/SP.POP.GROW;NY.GDP.MKTP.KD.ZG;NY.GDP.DEFL.KD.ZG;NY.GNP.PCAP.PP.CD;IT.NET.USER.ZS;SL.UEM.TOTL.ZS;NY.GDP.MKTP.CD?format=json&scale=y&date=2018&source=2`).then(resp => {
+                        `/indicator/SP.POP.GROW;NY.GDP.MKTP.KD.ZG;NY.GDP.DEFL.KD.ZG;NY.GNP.PCAP.PP.CD;IT.NET.USER.ZS;SL.UEM.TOTL.ZS;NY.GDP.MKTP.CD;SI.POV.GINI?format=json&scale=y&date=2018&source=2`).then(resp => {
                         return resp.json();
                     }).then(resp => {
-                        console.log(resp);
                         this.setState({
                             dataBySearch: resp
                         })
@@ -137,7 +136,6 @@ export default class Home extends React.Component {
             }).then( ipResp => {
             return  ipResp.json();
         }).then( ipResp => {
-            console.log(ipResp);
             this.setState({
                 ipCountry: ipResp.country
             }, () => {
@@ -151,7 +149,7 @@ export default class Home extends React.Component {
                         });
                         let {countryCode} =this.state;
                         fetch(`https://api.worldbank.org/v2/en/country/` + countryCode +
-                            `/indicator/SP.POP.GROW;NY.GDP.MKTP.KD.ZG;NY.GDP.DEFL.KD.ZG;NY.GNP.PCAP.PP.CD;IT.NET.USER.ZS;SL.UEM.TOTL.ZS;NY.GDP.MKTP.CD?format=json&scale=y&date=2018&source=2`).then(resp => {
+                            `/indicator/SP.POP.GROW;NY.GDP.MKTP.KD.ZG;NY.GDP.DEFL.KD.ZG;NY.GNP.PCAP.PP.CD;IT.NET.USER.ZS;SL.UEM.TOTL.ZS;NY.GDP.MKTP.CD;SI.POV.GINI?format=json&scale=y&date=2018&source=2`).then(resp => {
                             return resp.json();
                         }).then(resp => {
                             // console.log(resp);
