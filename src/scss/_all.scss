@@ -58,12 +58,20 @@ body {
 }
 // Container
 .main {
-  background-image: url("/assets/images/map.png");
+  background-image: url("/assets/images/water_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 110%;
   width: 100%;
+  @media screen and #{$tablet} {
+    background-image: url('/assets/images/tablet_bg.png');
+    //background-size: contain;
+
+  }
+  @media screen and #{$desktop} {
+    background-image: url("/assets/images/map.png");
+  }
 
 }
 .app_container {
@@ -161,11 +169,13 @@ body {
     min-width: 70vw;
     height: 30vh;
   }
-
+  @media screen and #{$desktop} {
+    width: 50vw;
+  }
   width: 90vw;
   max-width: 90vw;
   background: $gradient1;
-  margin-top: 5vh;
+  margin-top: 3vh !important;
   border-radius: 15px;
   display: flex;
   flex-wrap: wrap;

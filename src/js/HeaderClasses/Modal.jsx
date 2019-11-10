@@ -30,8 +30,8 @@ export default class Modal extends React.Component {
                                 It offers a small window into the current and future well-being of its citizens.
                             </p>
                             <p>
-                                It combines both my interest in programming; in nice, clean and responsive design as well
-                                as my passion for international relations. This project is about practicing my current skills.
+                                It combines both my interest in programming; in nice and responsive design as well
+                                as my passion for international relations, developed in React. This project is about practicing my current skills.
                             </p>
 
                         </article>

@@ -29,7 +29,7 @@ export default class FormBody extends React.Component {
     handleSubject = select => {
         this.setState({
             subject: select.target.value,
-            countries: select.target.value
+
         })
     };
     handleCountries =  select => {

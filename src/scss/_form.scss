@@ -155,6 +155,10 @@ header {
       border-left: 2px solid white;
     }
   }
+  //Remove IE arrow
+  select::-ms-expand {
+    display: none;
+  }
   select {
     width: 100%;
     height: 3vh;
@@ -165,6 +169,7 @@ header {
     -webkit-appearance: button;
     outline: none;
     text-indent: 2px;
+    overflow: hidden;
     @media screen and #{$tablet} {
       font-size: 1.8vh;
       text-indent: 5px;
@@ -173,9 +178,9 @@ header {
       font-size: 2vh;
       text-indent: 10px;
     }
-    &:focus {
-      background: cornflowerblue;
-    }
+    //&:focus {
+    //  background: cornflowerblue;
+    //}
     option {
       background: #066ACA;
       color: darkblue;
@@ -183,6 +188,10 @@ header {
       font-size: 1.5vh;
       padding: 0;
       margin: 0;
+      width: 3vw;
+      overflow: hidden;
+      outline: none;
+      border: none;
     }
     option[disabled] {
       background-color: white;
@@ -211,11 +220,13 @@ header {
     }
   }
   .subject_box:hover::before {
-    background: darkblue;
+    color: darkblue;
   }
 
+
   .subject_box:active::before {
-    background: cornflowerblue;
+    color: white;
+
   }
   .countries_box::before {
     content: "\f13a";
@@ -239,10 +250,10 @@ header {
     }
   }
   .countries_box:hover::before {
-    background: darkblue;
+    color: darkblue;
   }
   .countries_box:active::before {
-    background: cornflowerblue;
+    color: white;
   }
 }
 
@@ -502,6 +513,8 @@ textarea {
   }
   h3 {
     text-align: center;
-
+  }
+  p {
+    text-align: center;
   }
 }
