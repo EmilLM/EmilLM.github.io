@@ -121,7 +121,7 @@ header {
   .pass_icon {
     position: absolute;
     bottom: 20%;
-    right: 13%;
+    right: 15%;
     color: cornflowerblue;
     width: 0.1vw;
     height: auto;
@@ -133,10 +133,10 @@ header {
     @media screen and #{$desktop} {
       font-size: 2.5vh;
       right: 8%;
-      @media screen and (min-height: 1300px) {
-        right: 11%;
-        bottom: 17%;
-      }
+    }
+    @media screen and (min-height: 1300px) {
+      right: 11%;
+      bottom: 11%;
     }
     &:active {
       color: #000066;
@@ -194,9 +194,9 @@ header {
     @media screen and #{$desktop} {
       font-size: 2vh;
       text-indent: 10px;
-      @media screen and (min-height: 1250px) {
-        font-size: 1.8vh;
-      }
+    }
+    @media screen and (min-height: 13000px) {
+      font-size: 1.8vh;
     }
     //&:focus {
     //  background: cornflowerblue;
@@ -209,7 +209,10 @@ header {
       @media screen and #{$tablet} {
         font-size: 1vh;
       }
-      @media screen and (min-height: 1250px) {
+      @media screen and #{$desktop} {
+        font-size: 1.7vh;
+      }
+      @media screen and (min-height: 1300px) {
         font-size: 1vh;
       }
       padding: 0;
@@ -543,7 +546,7 @@ textarea {
 #main_postSubmit {
   height: 40vh;
   font-size: 2vh;
-  max-height: 250px;
+  main-height: 250px;
   @media screen and #{$tablet} {
     height: 40vh;
     font-size: 2.5vh;
@@ -554,7 +557,7 @@ textarea {
     @media screen and (min-height: 1300px) {
       font-size: 2vh;
       height: 40vh;
-      max-height: 450px;
+      min-height: 450px;
     }
   }
   h3 {
