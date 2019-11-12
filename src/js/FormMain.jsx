@@ -10,8 +10,6 @@ import AfterSubmit from "./ContactForm/AfterSubmit.jsx";
 import Modal from "./HeaderClasses/Modal.jsx";
 
 
-
-
 export default class FormMain extends React.Component {
     state = {
         isFormValid : false,

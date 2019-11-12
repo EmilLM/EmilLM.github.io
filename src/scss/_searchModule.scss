@@ -48,8 +48,9 @@
     height: 20vh;
     max-height: 200px;
   }
+  max-width: 450px;
+  min-width: 300px;
   width: 90vw;
-  min-width: 350px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column-reverse;
