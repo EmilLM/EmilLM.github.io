@@ -43,6 +43,7 @@
       background: darkblue;
       border: 3px solid cornflowerblue;
       height: 8vh;
+      min-height: 55px;
       display: flex;
       //justify-content: center;
       align-items: center;
@@ -52,7 +53,7 @@
         }
       }
       @media screen and #{$tablet} {
-        font-size: 2.5vh;
+        font-size: 1.2em;
       }
       @media screen and #{$desktop} {
         font-size: 3vh;
@@ -82,10 +83,10 @@
           margin: 15px 0 0 0;
           font-size: 0.7em;
           @media screen and #{$tablet} {
-            font-size: 2.5vh;
+            font-size: 1.1em;
           }
           @media screen and #{$desktop} {
-            font-size: 2.8vh;
+            font-size: 1.5em;
           }
         }
         p {
@@ -93,12 +94,11 @@
           padding: 0 1vw 0 1vw;
           margin: 1.5vh 0 0 0;
           text-indent: 2vw;
-
           @media screen and #{$tablet} {
-            font-size: 1.7vh;
+            font-size: 0.9em;
           }
           @media screen and #{$desktop} {
-            font-size: 2vh;
+            font-size: 1.3em;
           }
         }
       }
@@ -119,7 +119,7 @@
         margin: 0 0 5px -27px;
     }
     @media screen and #{$tablet} {
-      font-size: 1.3em;
+      font-size: 1em;
       margin: 10px 0 14px -25px;
     }
     @media screen and #{$desktop} {
@@ -145,6 +145,7 @@ footer {
   border: 3px solid cornflowerblue;
   border-radius: 10px;
   height: 8vh;
+  min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;

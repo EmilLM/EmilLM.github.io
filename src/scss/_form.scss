@@ -11,6 +11,7 @@ header {
   justify-content: space-evenly;
   width: 95%;
   height: 40vh;
+  min-height: 250px;
   margin: 10px auto;
   position: relative;
   flex-wrap: wrap;
@@ -109,7 +110,7 @@ header {
       font-size: 2.2vh;
     }
     @media screen and #{$desktop} {
-      left: 12%;
+      left: 11%;
       font-size: 2.5vh;
       @media screen and (min-height: 1300px) {
         left: 16%;
@@ -195,7 +196,7 @@ header {
       font-size: 2vh;
       text-indent: 10px;
     }
-    @media screen and (min-height: 13000px) {
+    @media screen and (min-height: 1300px) {
       font-size: 1.8vh;
     }
     //&:focus {
@@ -545,19 +546,19 @@ textarea {
 }
 #main_postSubmit {
   height: 40vh;
-  font-size: 2vh;
+  font-size: 1em;
   min-height: 250px;
   @media screen and #{$tablet} {
     height: 40vh;
-    font-size: 2.5vh;
+    font-size: 1.3em;
   }
   @media screen and #{$desktop} {
     height: 50vh;
-    font-size: 3vh;
+    font-size: 1.5em;
     @media screen and (min-height: 1300px) {
-      font-size: 2vh;
+      font-size: 1em;
       height: 40vh;
-      min-height: 450px;
+      min-height: 1.6em;
     }
   }
   h3 {
