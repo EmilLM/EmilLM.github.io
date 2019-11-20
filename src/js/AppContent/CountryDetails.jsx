@@ -13,15 +13,15 @@ export default class CountryDetails extends React.Component {
                 <>
                 <div id='countryIP' className="country_details ">
                     <a href={"https://en.wikipedia.org/wiki/" + this.props.ipCountry} target="_blank">
-                    <img className="flag ldt-blur-in" src={dataIP[0].flag} alt={'flag'} />
+                    <img className="flag" src={dataIP[0].flag} alt={'flag'} />
                     </a>
-                    <div className="currency_country ldt-slide-bottom-in">
+                    <div className="currency_country">
                         <div className="countryName">{dataIP[0].name}</div>
                         <div className="currency">{dataIP[0].currencies[0].code}</div>
                         <div className="language">{dataIP[0].languages[0].name} </div>
                     </div>
                 </div>
-                <ul id='mainIndicators' className="main_indicators ldt-fall-in">
+                <ul id='mainIndicators' className="main_indicators">
                     <li className='tooltip'>
                         <img src={"../../assets/images/population.png"} alt={'population icon'} />
                         <span className="value"> <span>Pop. growth:</span>  {dataCode[1][0].value}{dataCode[1][0].value?'%':'N/A'}</span>

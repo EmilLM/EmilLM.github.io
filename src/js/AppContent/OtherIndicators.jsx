@@ -7,9 +7,9 @@ export default class OtherIndicators extends React.Component {
                      return <img style={{margin: '8vh auto', width:'8vw', height: 'auto'}} src={'../../assets/images/animIcons/earth_loading.svg'} alt={'loading icon'}/>
                 } else {
                      return   <ul className="other_indicators ip_module">
-                                    <li className={'ldt-slide-left-in tooltip '}>
+                                    <li className={'tooltip'}>
                                         <div className="indicator_name">UNEMPLOYED</div>
-                                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/work.svg"} alt={'work icon'} /></div>
+                                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/work.png"} alt={'work icon'} /></div>
                                         <div className="indicator_value">{dataCode[1][5].value}{dataCode[1][5].value?'%':'N/A'}</div>
                                         <div className="bottom">
                                             <p className='tooltipText'>
@@ -19,9 +19,9 @@ export default class OtherIndicators extends React.Component {
                                             <i> </i>
                                         </div>
                                     </li>
-                                    <li className={'ldt-slide-bottom-in tooltip'}>
+                                    <li className={'tooltip'}>
                                         <div className="indicator_name">GDP GROWTH</div>
-                                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/growth.svg"} alt={'GDP icon'} /></div>
+                                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/growth.png"} alt={'GDP icon'} /></div>
                                         <div className="indicator_value">{dataCode[1][1].value}{dataCode[1][1].value?'%':'N/A'}</div>
                                         <div className="bottom">
                                             <p className='tooltipText'>
@@ -31,9 +31,9 @@ export default class OtherIndicators extends React.Component {
                                             <i> </i>
                                         </div>
                                     </li>
-                                    <li className={'ldt-slide-top-in tooltip'}>
+                                    <li className={'tooltip'}>
                                         <div className="indicator_name">GINI</div>
-                                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/GINI.svg"} alt={'GINI icon'} /></div>
+                                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/GINI.png"} alt={'GINI icon'} /></div>
                                         <div className="indicator_value">{dataIP?dataIP[0].gini:''}{dataIP[0].gini?'':'N/A'}</div>
                                         <div className="bottom">
                                             <p className='tooltipText'>
@@ -43,9 +43,9 @@ export default class OtherIndicators extends React.Component {
                                             <i> </i>
                                         </div>
                                     </li>
-                                    <li className={'ldt-slide-bottom-in tooltip'}>
+                                    <li className={'tooltip'}>
                                         <div className="indicator_name">NET USERS</div>
-                                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/wifi.svg"} alt={'wifi icon'} /></div>
+                                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/wifi.png"} alt={'wifi icon'} /></div>
                                         <div className="indicator_value">{dataCode[1][4].value}{dataCode[1][4].value?'%':'N/A'}</div>
                                         <div className="bottom">
                                             <p className='tooltipText'>
@@ -54,9 +54,9 @@ export default class OtherIndicators extends React.Component {
                                             <i> </i>
                                         </div>
                                     </li>
-                                    <li className={'ldt-slide-right-in tooltip'}>
+                                    <li className={'tooltip'}>
                                         <div className="indicator_name">INFLATION</div>
-                                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/inflat.svg"} alt={'C02 icon'} /></div>
+                                        <div className="indicator_icon"><img src={"../../assets/images/animIcons/inflat.png"} alt={'C02 icon'} /></div>
                                         <div className="indicator_value">{dataCode[1][2].value}{dataCode[1][2].value?'%':'N/A'}</div>
                                         <div className="bottom">
                                             <p className='tooltipText'>

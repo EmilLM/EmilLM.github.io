@@ -13,15 +13,15 @@ export default class CountryDetailsFromSearch extends React.Component {
                     <>
                         <div className="country_details ">
                             <a href={"https://en.wikipedia.org/wiki/" + countrySearch[0].name} target="_blank">
-                                <img className="flag ldt-blur-in" src={countrySearch[0].flag} alt={'flag icon'} />
+                                <img className="flag" src={countrySearch[0].flag} alt={'flag icon'} />
                             </a>
-                            <div className="currency_country ldt-slide-bottom-in">
+                            <div className="currency_country">
                                 <div className="countryName">{countrySearch[0].name}</div>
                                 <div className="currency">{countrySearch[0].currencies[0].code}</div>
                                 <div className="language">{countrySearch[0].languages[0].name} </div>
                             </div>
                         </div>
-                        <ul className="main_indicators ldt-fall-in">
+                        <ul className="main_indicators">
                             <li className='tooltip'>
                                 <img src={"../../assets/images/population.png"} alt={'population icon'} />
                                 <span className="pop_value"> <span>Pop. growth:</span>  {dataSearch[1][0].value}{dataSearch[1][0].value?'%':'N/A'}</span>

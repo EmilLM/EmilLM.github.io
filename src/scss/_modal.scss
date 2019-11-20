@@ -60,6 +60,7 @@
       }
     }
     main {
+      padding: 10px 5px;
       @media screen and #{$desktop} {
         height: 50vh;
       }

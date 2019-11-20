@@ -71,7 +71,7 @@ export default class FormBody extends React.Component {
     render () {
         let {allCountries} = this.state;
         return (
-            <main className='ldt-fade-in form_body'>
+            <main className='form_body'>
                 <form className={'main_form'} onSubmit={this.handleSubmit}>
                     <div className={'contact_form'}>
                         <div className={'inputs'}>

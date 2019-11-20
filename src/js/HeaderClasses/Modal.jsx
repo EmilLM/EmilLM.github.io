@@ -15,15 +15,15 @@ export default class Modal extends React.Component {
         return (
             <div className='gray_bg'>
                 <div className={'modal ' + this.props.onClass} onAnimationEnd={this.handleAnimation}>
-                    <header className='modal_header ldt-slide-top-in'>
-                        <h3 className='ldt-slide-bottom-in'>CountryINFO!</h3>
+                    <header className='modal_header'>
+                        <h3>CountryINFO!</h3>
                         <div className='close-container' onClick={this.handleClick}>
                             <div className="leftRight"> </div>
                             <div className="rightLeft"> </div>
                         </div>
                     </header>
-                    <main className='ldt-fade-in'>
-                        <article className='ldt-slide-left-in'>
+                    <main>
+                        <article>
                             <h5>Scope</h5>
                             <p>
                                 CountryInfo! is web app that presents various social-economic indicators about a country.
@@ -35,7 +35,7 @@ export default class Modal extends React.Component {
                             </p>
 
                         </article>
-                        <article className='ldt-slide-right-in'>
+                        <article>
                             <h5>Sources</h5>
                             <p> Data is valid only for 2018.</p>
                             <div className='doc_lists'>
@@ -57,9 +57,9 @@ export default class Modal extends React.Component {
                             </div>
                         </article>
                     </main>
-                    <footer className='ldt-slide-bottom-in'>
-                        <a className='ldt-slide-left-in' href={'https://github.com/EmilLM/CountryInfo'} target={'_blank'}><span id='gh'> </span></a>
-                        <a className='ldt-slide-right-in' href='https://www.linkedin.com/in/emil-luchian-9933b198/' target={'_blank'}><span id='lin'> </span></a>
+                    <footer>
+                        <a href={'https://github.com/EmilLM/CountryInfo'} target={'_blank'}><span id='gh'> </span></a>
+                        <a href='https://www.linkedin.com/in/emil-luchian-9933b198/' target={'_blank'}><span id='lin'> </span></a>
                     </footer>
                 </div>
             </div>
