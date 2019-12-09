@@ -20,7 +20,7 @@
     }
     @media screen and #{$desktop} {
       width: 50vw;
-      min-width: 950px;
+      min-width: 840px;
     }
     position: absolute;
     max-width: 450px;
@@ -63,6 +63,7 @@
       padding: 10px 5px;
       @media screen and #{$desktop} {
         height: 50vh;
+        max-height: 500px;
       }
       background-image: url('/assets/images/modal_bg.gif');
       background-position: center;

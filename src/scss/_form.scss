@@ -101,7 +101,7 @@ header {
   }
   .check_icon {
     position: absolute;
-    bottom: 20%;
+    bottom: 25%;
     left: 17%;
     color: cornflowerblue;
     font-size: 2vh;
@@ -121,7 +121,7 @@ header {
   }
   .pass_icon {
     position: absolute;
-    bottom: 20%;
+    bottom: 25%;
     right: 15%;
     color: cornflowerblue;
     width: 0.1vw;
@@ -445,9 +445,9 @@ textarea {
         background-position: -1px 1px;
       }
       @media screen and #{$desktop} {
-        width: 30px;
-        height: 30px;
-        background-position: -2px -2px;
+        width: 25px;
+        height: 25px;
+        background-position: -6px -4px;
         background-size: 45px 45px;
         right: 35px;
         top: 50%;

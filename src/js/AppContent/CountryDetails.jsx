@@ -12,7 +12,7 @@ export default class CountryDetails extends React.Component {
                     :
                 <>
                 <div id='countryIP' className="country_details ">
-                    <a href={"https://en.wikipedia.org/wiki/" + this.props.ipCountry} target="_blank">
+                    <a href={"https://en.wikipedia.org/wiki/" + dataIP[0].name} target="_blank">
                     <img className="flag" src={dataIP[0].flag} alt={'flag'} />
                     </a>
                     <div className="currency_country">
